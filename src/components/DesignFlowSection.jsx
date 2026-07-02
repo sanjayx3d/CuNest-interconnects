@@ -62,7 +62,7 @@ function DesignFlowSection() {
                 transition={{ duration: 0.7, delay: index * 0.08 }}
               >
                 <Box sx={{ p: 3, border: '1px solid rgba(197,119,58,0.16)', background: 'rgba(197,119,58,0.03)', backdropFilter: 'blur(10px)', minHeight: 420 }}>
-                  <Typography variant="h5" sx={{ mb: 3, fontFamily: '"Syne", sans-serif' }}>
+                  <Typography variant="h5" sx={{ mb: 3, fontFamily: '"JetBrains Mono", sans-serif' }}>
                     {phase.title}
                   </Typography>
                   <Box component="ol" sx={{ pl: 3, m: 0, color: 'text.secondary' }}>

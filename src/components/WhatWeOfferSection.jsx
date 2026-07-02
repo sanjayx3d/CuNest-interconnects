@@ -29,7 +29,7 @@ function WhatWeOfferSection() {
           <Typography
             variant="h2"
             sx={{
-              fontFamily: '"Inter", "Poppins", sans-serif',
+              fontFamily: '"JetBrains Mono", sans-serif',
               fontWeight: 800,
               color: '#ffffff',
               fontSize: { xs: '2.5rem', md: '3.5rem' },
@@ -93,7 +93,7 @@ function WhatWeOfferSection() {
                   <Typography
                     variant="h5"
                     sx={{
-                      fontFamily: '"Inter", "Poppins", sans-serif',
+                      fontFamily: '"JetBrains Mono", sans-serif',
                       fontWeight: 700,
                       color: '#ffffff',
                       mb: 2.5,
@@ -105,7 +105,7 @@ function WhatWeOfferSection() {
                   <Typography
                     variant="body1"
                     sx={{
-                      fontFamily: '"Inter", "Poppins", sans-serif',
+                      fontFamily: '"JetBrains Mono", sans-serif',
                       color: 'rgba(255, 255, 255, 0.7)', // Light opacity gray/white
                       lineHeight: 1.7,
                       fontSize: '1.05rem',

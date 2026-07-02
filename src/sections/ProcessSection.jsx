@@ -25,7 +25,7 @@ const processSteps = [
 
 const ProcessSection = () => {
   return (
-    <Box sx={{ pt: '140px', pb: { xs: 12, md: 20 }, position: 'relative', bgcolor: '#FDF8F3' }}>
+    <Box sx={{ pt: { xs: '80px', md: '140px' }, pb: { xs: 12, md: 20 }, position: 'relative', bgcolor: '#FDF8F3' }}>
       <Container maxWidth="lg">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -39,15 +39,16 @@ const ProcessSection = () => {
               sx={{ 
                 color: '#5C3A1A', 
                 mb: 2, 
-                fontFamily: '"Inter", sans-serif', 
-                fontWeight: 700 
+                fontFamily: '"JetBrains Mono", sans-serif', 
+                fontWeight: 700,
+                fontSize: { xs: '2rem', md: '3rem' }
               }}
             >
               How We Engineer Success.
             </Typography>
           </Box>
 
-          <Grid container spacing={8} justifyContent="center">
+          <Grid container spacing={{ xs: 4, md: 8 }} justifyContent="center">
             {processSteps.map((step, index) => (
               <Grid item xs={12} md={4} key={index}>
                 <Box sx={{ textAlign: 'center', px: { xs: 2, md: 3 } }}>
@@ -57,7 +58,7 @@ const ProcessSection = () => {
                   <Typography 
                     variant="h6" 
                     sx={{ 
-                      fontFamily: '"Inter", sans-serif', 
+                      fontFamily: '"JetBrains Mono", sans-serif', 
                       fontWeight: 700, 
                       color: '#333333', 
                       mb: 2, 

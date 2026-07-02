@@ -24,7 +24,7 @@ const ContactPage = () => {
       <Container maxWidth="lg">
         {/* Header */}
         <Box textAlign="center" mb={10} mt={4}>
-          <Typography variant="h2" sx={{ fontFamily: '"Syne", sans-serif', fontWeight: 800, color: '#0F3D3E', mb: 2 }}>
+          <Typography variant="h2" sx={{ fontFamily: '"JetBrains Mono", sans-serif', fontWeight: 800, color: '#0F3D3E', mb: 2 }}>
             Get in Touch
           </Typography>
           <Typography variant="body1" sx={{ color: '#666666', maxWidth: '600px', mx: 'auto' }}>
@@ -44,7 +44,7 @@ const ContactPage = () => {
           <Grid container>
             {/* Left Side - Contact Info */}
             <Grid item xs={12} md={5} sx={{ backgroundColor: '#0F3D3E', color: '#FFFFFF', p: { xs: 4, md: 8 } }}>
-              <Typography variant="h3" sx={{ fontFamily: '"Syne", sans-serif', fontWeight: 700, mb: 6, fontSize: { xs: '2rem', md: '2.5rem' } }}>
+              <Typography variant="h3" sx={{ fontFamily: '"JetBrains Mono", sans-serif', fontWeight: 700, mb: 6, fontSize: { xs: '2rem', md: '2.5rem' } }}>
                 Contact For Any Queries
               </Typography>
               

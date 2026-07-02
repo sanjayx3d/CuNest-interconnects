@@ -41,7 +41,7 @@ function ToolsSection() {
                     justifyContent: 'space-between',
                   }}
                 >
-                  <Typography variant="h6" sx={{ mb: 2, fontFamily: '"Syne", sans-serif' }}>
+                  <Typography variant="h6" sx={{ mb: 2, fontFamily: '"JetBrains Mono", sans-serif' }}>
                     {group.label}
                   </Typography>
                   <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>

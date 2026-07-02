@@ -57,7 +57,7 @@ const AboutPage = () => {
             <Typography variant="overline" sx={{ color: '#CD7F32', letterSpacing: '3px', fontWeight: 700, mb: 2, display: 'block' }}>
               ABOUT CUNEST
             </Typography>
-            <Typography variant="h2" sx={{ fontFamily: '"Syne", sans-serif', fontWeight: 800, color: '#0F3D3E', mb: 3 }}>
+            <Typography variant="h2" sx={{ fontFamily: '"JetBrains Mono", sans-serif', fontWeight: 800, color: '#0F3D3E', mb: 3 }}>
               Our Core Pillars
             </Typography>
             <Typography variant="body1" sx={{ color: '#666666', maxWidth: '700px', mx: 'auto', fontSize: '1.1rem', lineHeight: 1.8 }}>
@@ -98,7 +98,7 @@ const AboutPage = () => {
                   <Box sx={{ mb: 3, p: 2, backgroundColor: 'rgba(205,127,50,0.05)', borderRadius: '16px', display: 'inline-block', width: 'fit-content' }}>
                     {item.icon}
                   </Box>
-                  <Typography variant="h4" sx={{ fontFamily: '"Syne", sans-serif', fontWeight: 700, color: '#0F3D3E', mb: 2 }}>
+                  <Typography variant="h4" sx={{ fontFamily: '"JetBrains Mono", sans-serif', fontWeight: 700, color: '#0F3D3E', mb: 2 }}>
                     {item.title}
                   </Typography>
                   <Typography variant="body1" sx={{ color: '#666666', lineHeight: 1.7, fontSize: '1.05rem' }}>

@@ -30,7 +30,7 @@ export default {
         }
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        sans: ['"JetBrains Mono"', 'monospace'],
       },
       boxShadow: {
         'elevated': '0px 20px 40px -12px rgba(0,0,0,0.8)',

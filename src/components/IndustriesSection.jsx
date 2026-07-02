@@ -51,7 +51,7 @@ const IndustryCard = ({ title, description, image, delay }) => (
             color: '#0a2540',
             fontWeight: 700,
             mb: 2,
-            fontFamily: '"Inter", sans-serif',
+            fontFamily: '"JetBrains Mono", sans-serif',
           }}
         >
           {title}
@@ -61,7 +61,7 @@ const IndustryCard = ({ title, description, image, delay }) => (
           sx={{
             color: '#666666',
             lineHeight: 1.6,
-            fontFamily: '"Inter", sans-serif',
+            fontFamily: '"JetBrains Mono", sans-serif',
             mb: 4,
             flexGrow: 1,
             fontSize: '0.95rem'
@@ -73,7 +73,7 @@ const IndustryCard = ({ title, description, image, delay }) => (
           sx={{
             color: '#B87333',
             fontWeight: 700,
-            fontFamily: '"Inter", sans-serif',
+            fontFamily: '"JetBrains Mono", sans-serif',
             display: 'flex',
             alignItems: 'center',
             cursor: 'pointer',
@@ -101,7 +101,7 @@ function IndustriesSection() {
             fontWeight: 800,
             color: '#0a2540',
             mb: 2,
-            fontFamily: '"Inter", sans-serif',
+            fontFamily: '"JetBrains Mono", sans-serif',
           }}
         >
           Industries we work with!
@@ -115,7 +115,7 @@ function IndustriesSection() {
             maxWidth: '600px',
             mx: 'auto',
             fontSize: '1.1rem',
-            fontFamily: '"Inter", sans-serif'
+            fontFamily: '"JetBrains Mono", sans-serif'
           }}
         >
           We provide cutting-edge solutions across major tech sectors.

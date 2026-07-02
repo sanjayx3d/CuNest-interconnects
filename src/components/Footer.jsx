@@ -13,7 +13,7 @@ function Footer() {
     >
       <Container maxWidth="lg" sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, alignItems: 'center', justifyContent: 'space-between', gap: 2 }}>
         <Box>
-          <Typography variant="h6" sx={{ fontFamily: '"Syne", sans-serif' }}>
+          <Typography variant="h6" sx={{ fontFamily: '"JetBrains Mono", sans-serif' }}>
             CuNest Interconnects
           </Typography>
           <Typography variant="body2" sx={{ color: 'text.secondary', mt: 1 }}>

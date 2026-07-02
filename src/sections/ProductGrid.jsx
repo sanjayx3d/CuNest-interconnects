@@ -52,10 +52,10 @@ const ProductCard = ({ product }) => {
           />
         </Box>
         <Box sx={{ p: 4, flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
-          <Typography variant="h6" sx={{ color: '#0A1628', fontWeight: 700, mb: 1, fontFamily: '"Inter", sans-serif' }}>
+          <Typography variant="h6" sx={{ color: '#0A1628', fontWeight: 700, mb: 1, fontFamily: '"JetBrains Mono", sans-serif' }}>
             {product.name}
           </Typography>
-          <Typography variant="body2" sx={{ color: '#4B5563', mb: 3, flexGrow: 1, fontFamily: '"Inter", sans-serif', lineHeight: 1.6 }}>
+          <Typography variant="body2" sx={{ color: '#4B5563', mb: 3, flexGrow: 1, fontFamily: '"JetBrains Mono", sans-serif', lineHeight: 1.6 }}>
             {product.desc}
           </Typography>
           <Typography 
@@ -81,11 +81,11 @@ const ProductCard = ({ product }) => {
 
 const ProductGrid = () => {
   return (
-    <Box sx={{ pt: { xs: 16, md: '140px' }, pb: { xs: 12, md: 20 }, bgcolor: '#FFFFFF' }}>
+    <Box sx={{ pt: { xs: 10, md: '140px' }, pb: { xs: 10, md: 20 }, bgcolor: '#FFFFFF' }}>
       <Container maxWidth="lg">
-        <Box textAlign="center" mb={10}>
+        <Box sx={{ textAlign: 'center', mb: { xs: 6, md: 10 } }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <Typography variant="h3" sx={{ color: '#0A1628', mb: 2, fontFamily: '"Inter", sans-serif', fontWeight: 700 }}>
+            <Typography variant="h3" sx={{ color: '#0A1628', mb: 2, fontFamily: '"JetBrains Mono", sans-serif', fontWeight: 700, fontSize: { xs: '2rem', md: '3rem' } }}>
               Industries we work with!
             </Typography>
             <Typography variant="body1" sx={{ color: '#64748B', maxWidth: '600px', mx: 'auto' }}>
@@ -94,7 +94,7 @@ const ProductGrid = () => {
           </motion.div>
         </Box>
 
-        <Grid container spacing={6}>
+        <Grid container spacing={{ xs: 4, md: 6 }}>
           {products.map((product, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
               <motion.div

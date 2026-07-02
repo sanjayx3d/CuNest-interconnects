@@ -141,7 +141,7 @@ ${formData.message || "Not Provided"}
             variant="h3"
             sx={{
               mb: 3,
-              fontFamily: '"Syne", sans-serif',
+              fontFamily: '"JetBrains Mono", sans-serif',
               fontSize: {
                 xs: '1.6rem',
                 sm: '2.2rem',

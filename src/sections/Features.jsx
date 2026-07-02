@@ -81,14 +81,14 @@ const itemVariants = [
 
 const Features = () => {
   return (
-    <div id="expertise" className="bg-white pt-[140px] pb-24 md:pb-32 relative font-sans">
+    <div id="expertise" className="bg-white pt-20 md:pt-[140px] pb-24 md:pb-32 relative font-sans">
       <Container maxWidth="lg">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-black tracking-tight mb-6 font-['Inter',sans-serif] bg-gradient-to-r from-[#8C5A2B] to-[#0F3D3E] text-transparent bg-clip-text">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-black tracking-tight mb-6 font-sans bg-gradient-to-r from-[#8C5A2B] to-[#0F3D3E] text-transparent bg-clip-text">
             Your Blueprint. Our Expertise.
           </h2>
-          <p className="max-w-[800px] mx-auto text-gray-700 text-lg leading-relaxed font-['Inter',sans-serif]">
+          <p className="max-w-[800px] mx-auto text-gray-700 text-lg leading-relaxed font-sans">
             CuNest provides end-to-end interconnect solutions tailored to the electronics industry. By combining advanced engineering with deep manufacturing knowledge, we bridge the gap between your concepts and market-ready hardware, optimizing both performance and time-to-market.
           </p>
         </div>
@@ -99,7 +99,7 @@ const Features = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10"
         >
           {featuresData.map((feature, index) => (
             <motion.div key={index} variants={itemVariants[index]} className="h-full">
@@ -111,13 +111,13 @@ const Features = () => {
                   <div className="mb-6">
                     {feature.icon}
                   </div>
-                  <h3 className="text-xl font-extrabold mb-4 tracking-wide font-['Inter',sans-serif] bg-gradient-to-r from-[#8C5A2B] to-[#0F3D3E] text-transparent bg-clip-text">
+                  <h3 className="text-xl font-extrabold mb-4 tracking-wide font-sans bg-gradient-to-r from-[#8C5A2B] to-[#0F3D3E] text-transparent bg-clip-text">
                     {feature.title}
                   </h3>
-                  <p className="text-[#333333] font-medium leading-relaxed mb-8 flex-grow font-['Inter',sans-serif]">
+                  <p className="text-[#333333] font-medium leading-relaxed mb-8 flex-grow font-sans">
                     {feature.description}
                   </p>
-                  <div className="text-[#B87333] font-bold uppercase tracking-widest text-sm flex items-center gap-2 font-['Inter',sans-serif]">
+                  <div className="text-[#B87333] font-bold uppercase tracking-widest text-sm flex items-center gap-2 font-sans">
                     Learn More <span>&rarr;</span>
                   </div>
                 </motion.div>

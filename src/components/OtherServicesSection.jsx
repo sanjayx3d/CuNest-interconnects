@@ -26,7 +26,7 @@ function OtherServicesSection() {
         <Typography variant="overline" sx={{ color: 'text.secondary', mb: 2, letterSpacing: '0.35em' }}>
           Additional Services
         </Typography>
-        <Typography variant="h4" sx={{ mb: 4, fontFamily: '"Syne", sans-serif', maxWidth: 680 }}>
+        <Typography variant="h4" sx={{ mb: 4, fontFamily: '"JetBrains Mono", sans-serif', maxWidth: 680 }}>
           Supporting services that complete your package engineering pipeline.
         </Typography>
         <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1.5 }}>

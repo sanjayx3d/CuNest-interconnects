@@ -3,6 +3,7 @@ import { Box, Container, Typography } from '@mui/material';
 import { motion, AnimatePresence } from 'framer-motion';
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
+import { Link } from 'react-router-dom';
 
 const slides = [
   {
@@ -142,12 +143,12 @@ function HeroSection() {
               <Typography
                 variant="h1"
                 sx={{
-                  fontSize: { xs: '2.5rem', md: '4.5rem' },
+                  fontSize: { xs: '1.5rem', sm: '2.5rem', md: '4rem' },
                   fontWeight: 900,
                   textTransform: 'uppercase',
                   letterSpacing: '3px',
                   color: '#FFFFFF',
-                  fontFamily: '"Oswald", sans-serif',
+                  fontFamily: '"JetBrains Mono", sans-serif',
                   lineHeight: 1.1,
                   mb: 3,
                   textShadow: 'none',
@@ -161,9 +162,9 @@ function HeroSection() {
               <Typography
                 variant="body1"
                 sx={{
-                  fontSize: { xs: '1.1rem', md: '1.4rem' },
+                  fontSize: { xs: '0.9rem', sm: '1.1rem', md: '1.4rem' },
                   color: '#FFFFFF',
-                  fontFamily: '"Inter", sans-serif',
+                  fontFamily: '"JetBrains Mono", sans-serif',
                   maxWidth: '700px',
                   mx: 'auto',
                   lineHeight: 1.6
@@ -182,16 +183,20 @@ function HeroSection() {
             flexDirection: { xs: 'column', sm: 'row' }, 
             justifyContent: 'center', 
             alignItems: 'center',
-            gap: 3 
+            gap: { xs: 2, sm: 3 } 
           }}
         >
-          <button className="w-full sm:w-auto px-10 py-4 rounded-full bg-transparent border-2 border-[#CD7F32] text-white font-bold uppercase tracking-widest hover:bg-[#CD7F32] transition-all duration-300 hover:scale-105">
-            Explore Services
-          </button>
+          <Link to="/#expertise" className="w-full sm:w-auto">
+            <button className="w-full px-10 py-4 rounded-full bg-transparent border-2 border-[#CD7F32] text-white font-bold uppercase tracking-widest hover:bg-[#CD7F32] transition-all duration-300 hover:scale-105">
+              Explore Services
+            </button>
+          </Link>
           
-          <button className="w-full sm:w-auto px-10 py-4 rounded-full bg-transparent border-2 border-white text-white font-bold uppercase tracking-widest hover:bg-white hover:text-[#07090C] transition-all duration-300 hover:scale-105">
-            Contact Us
-          </button>
+          <Link to="/contact" className="w-full sm:w-auto">
+            <button className="w-full px-10 py-4 rounded-full bg-transparent border-2 border-white text-white font-bold uppercase tracking-widest hover:bg-white hover:text-[#07090C] transition-all duration-300 hover:scale-105">
+              Contact Us
+            </button>
+          </Link>
         </Box>
 
       </Container>

@@ -136,7 +136,7 @@ export default function App() {
         <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
           <div style={{ width: 32, height: 32, border: "1px solid #c5773a", borderRadius: 2, display: "grid", placeItems: "center", fontSize: 16 }}>◉</div>
           <div>
-            <div style={{ fontFamily: "'Syne', sans-serif", fontWeight: 700, fontSize: 15, letterSpacing: "0.08em", color: "#e8e4dc" }}>CuNest</div>
+            <div style={{ fontFamily: '"JetBrains Mono", sans-serif', fontWeight: 700, fontSize: 15, letterSpacing: "0.08em", color: "#e8e4dc" }}>CuNest</div>
             <div style={{ fontSize: 9, letterSpacing: "0.2em", color: "#c5773a", lineHeight: 1 }}>INTERCONNECTS</div>
           </div>
         </div>
@@ -157,7 +157,7 @@ export default function App() {
             <div style={{ width: 40, height: 1, background: "#c5773a" }} />
             <span style={{ fontSize: 11, letterSpacing: "0.25em", color: "#c5773a" }}>ALWAYS RELIABLE</span>
           </div>
-          <h1 style={{ fontFamily: "'Syne', sans-serif", fontSize: "clamp(40px, 6vw, 80px)", fontWeight: 800, lineHeight: 1.05, letterSpacing: "-0.02em", marginBottom: 24 }}>
+          <h1 style={{ fontFamily: '"JetBrains Mono", sans-serif', fontSize: "clamp(40px, 6vw, 80px)", fontWeight: 800, lineHeight: 1.05, letterSpacing: "-0.02em", marginBottom: 24 }}>
             IC Packaging<br />
             <span style={{ color: "#c5773a" }}>Design</span> Services
           </h1>
@@ -171,7 +171,7 @@ export default function App() {
           <div style={{ display: "flex", gap: 48, marginTop: 64, paddingTop: 40, borderTop: "1px solid rgba(197,119,58,0.1)" }}>
             {[["200+", "Designs Delivered"], ["1.5wk", "Avg Lead Time"], ["5+", "Package Types"]].map(([n, l]) => (
               <div key={n}>
-                <div style={{ fontFamily: "'Syne', sans-serif", fontSize: 28, fontWeight: 700, color: "#c5773a" }}>{n}</div>
+                <div style={{ fontFamily: '"JetBrains Mono", sans-serif', fontSize: 28, fontWeight: 700, color: "#c5773a" }}>{n}</div>
                 <div style={{ fontSize: 11, color: "#666", letterSpacing: "0.1em", marginTop: 2 }}>{l}</div>
               </div>
             ))}
@@ -184,13 +184,13 @@ export default function App() {
         <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 40px" }}>
           <div style={{ marginBottom: 56 }}>
             <span className="tag">SERVICES</span>
-            <h2 style={{ fontFamily: "'Syne', sans-serif", fontSize: "clamp(28px, 4vw, 48px)", fontWeight: 700, marginTop: 16, letterSpacing: "-0.02em" }}>Package Design Technologies</h2>
+            <h2 style={{ fontFamily: '"JetBrains Mono", sans-serif', fontSize: "clamp(28px, 4vw, 48px)", fontWeight: 700, marginTop: 16, letterSpacing: "-0.02em" }}>Package Design Technologies</h2>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 16 }}>
             {SERVICES.map(s => (
               <div key={s.title} className="service-card">
                 <div style={{ fontSize: 28, color: "#c5773a", marginBottom: 16 }}>{s.icon}</div>
-                <div style={{ fontFamily: "'Syne', sans-serif", fontWeight: 600, fontSize: 15, marginBottom: 4 }}>{s.title}</div>
+                <div style={{ fontFamily: '"JetBrains Mono", sans-serif', fontWeight: 600, fontSize: 15, marginBottom: 4 }}>{s.title}</div>
                 <div style={{ fontSize: 11, color: "#c5773a", letterSpacing: "0.1em", marginBottom: 12 }}>{s.sub}</div>
                 <div style={{ fontSize: 12, color: "#777", lineHeight: 1.7 }}>{s.desc}</div>
               </div>
@@ -205,7 +205,7 @@ export default function App() {
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "start" }}>
             <div>
               <span className="tag">EXPERTISE</span>
-              <h2 style={{ fontFamily: "'Syne', sans-serif", fontSize: "clamp(28px, 4vw, 44px)", fontWeight: 700, marginTop: 16, letterSpacing: "-0.02em", lineHeight: 1.1 }}>Professional<br />Capabilities</h2>
+              <h2 style={{ fontFamily: '"JetBrains Mono", sans-serif', fontSize: "clamp(28px, 4vw, 44px)", fontWeight: 700, marginTop: 16, letterSpacing: "-0.02em", lineHeight: 1.1 }}>Professional<br />Capabilities</h2>
               <p style={{ fontSize: 13, color: "#666", marginTop: 20, lineHeight: 1.8 }}>Our team brings deep hands-on experience across the full IC packaging design spectrum, from complex stack-up configurations to high-speed signal integrity.</p>
               <div style={{ marginTop: 40 }}>
                 <div style={{ fontSize: 11, color: "#c5773a", letterSpacing: "0.15em", marginBottom: 20 }}>TOOL EXPERTISE</div>
@@ -239,7 +239,7 @@ export default function App() {
       <Section id="design-flow" style={{ padding: "100px 0" }} className="grid-bg">
         <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 40px" }}>
           <span className="tag">PROCESS</span>
-          <h2 style={{ fontFamily: "'Syne', sans-serif", fontSize: "clamp(28px, 4vw, 44px)", fontWeight: 700, marginTop: 16, letterSpacing: "-0.02em", marginBottom: 56 }}>Design Flow</h2>
+          <h2 style={{ fontFamily: '"JetBrains Mono", sans-serif', fontSize: "clamp(28px, 4vw, 44px)", fontWeight: 700, marginTop: 16, letterSpacing: "-0.02em", marginBottom: 56 }}>Design Flow</h2>
           <div style={{ position: "relative", overflowX: "auto", paddingBottom: 8 }}>
             <div style={{ display: "flex", gap: 0, minWidth: 900, position: "relative" }}>
               <div style={{ position: "absolute", top: 7, left: 7, right: 7, height: 2, background: "linear-gradient(90deg, #c5773a, rgba(197,119,58,0.15))", zIndex: 0 }} />
@@ -262,7 +262,7 @@ export default function App() {
       <Section id="projects" style={{ padding: "100px 0", background: "#0d0f12" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 40px" }}>
           <span className="tag">PORTFOLIO</span>
-          <h2 style={{ fontFamily: "'Syne', sans-serif", fontSize: "clamp(28px, 4vw, 44px)", fontWeight: 700, marginTop: 16, letterSpacing: "-0.02em", marginBottom: 40 }}>Design Models</h2>
+          <h2 style={{ fontFamily: '"JetBrains Mono", sans-serif', fontSize: "clamp(28px, 4vw, 44px)", fontWeight: 700, marginTop: 16, letterSpacing: "-0.02em", marginBottom: 40 }}>Design Models</h2>
           <div style={{ display: "flex", gap: 8, marginBottom: 40 }}>
             {PROJECTS.map((p, i) => (
               <button key={i} onClick={() => setActiveProject(i)} style={{ fontFamily: "inherit", fontSize: 12, letterSpacing: "0.1em", padding: "10px 24px", border: "1px solid", borderColor: activeProject === i ? "#c5773a" : "rgba(197,119,58,0.2)", background: activeProject === i ? "rgba(197,119,58,0.1)" : "transparent", color: activeProject === i ? "#c5773a" : "#666", cursor: "pointer", transition: "all 0.2s" }}>{p.name}</button>
@@ -272,14 +272,14 @@ export default function App() {
             <div key={idx} style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 40 }}>
               <div>
                 <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}>
-                  <span style={{ fontFamily: "'Syne', sans-serif", fontWeight: 700, fontSize: 20 }}>{p.name}</span>
+                  <span style={{ fontFamily: '"JetBrains Mono", sans-serif', fontWeight: 700, fontSize: 20 }}>{p.name}</span>
                   <span className="tag">{p.badge}</span>
                 </div>
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8, marginBottom: 24 }}>
                   {p.stats.map(([k, v]) => (
                     <div key={k} className="stat-card">
                       <div style={{ fontSize: 10, color: "#666", letterSpacing: "0.1em", marginBottom: 4 }}>{k.toUpperCase()}</div>
-                      <div style={{ fontFamily: "'Syne', sans-serif", fontWeight: 600, fontSize: 18, color: "#c5773a" }}>{v}</div>
+                      <div style={{ fontFamily: '"JetBrains Mono", sans-serif', fontWeight: 600, fontSize: 18, color: "#c5773a" }}>{v}</div>
                     </div>
                   ))}
                 </div>
@@ -301,7 +301,7 @@ export default function App() {
       <Section style={{ padding: "80px 0" }} className="grid-bg">
         <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 40px" }}>
           <span className="tag">ALSO AVAILABLE</span>
-          <h2 style={{ fontFamily: "'Syne', sans-serif", fontSize: "clamp(22px, 3vw, 36px)", fontWeight: 700, marginTop: 16, letterSpacing: "-0.02em", marginBottom: 32 }}>Other Services</h2>
+          <h2 style={{ fontFamily: '"JetBrains Mono", sans-serif', fontSize: "clamp(22px, 3vw, 36px)", fontWeight: 700, marginTop: 16, letterSpacing: "-0.02em", marginBottom: 32 }}>Other Services</h2>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
             {OTHER_SERVICES.map(s => (
               <div key={s} style={{ border: "1px solid rgba(197,119,58,0.2)", padding: "12px 20px", fontSize: 12, color: "#888", letterSpacing: "0.05em", transition: "all 0.2s", cursor: "default" }}
@@ -326,7 +326,7 @@ export default function App() {
             ].map(([icon, title, desc]) => (
               <div key={title} style={{ padding: "36px 28px", borderRight: "1px solid rgba(197,119,58,0.1)", borderBottom: "1px solid rgba(197,119,58,0.1)" }}>
                 <div style={{ fontSize: 24, marginBottom: 16 }}>{icon}</div>
-                <div style={{ fontFamily: "'Syne', sans-serif", fontWeight: 600, fontSize: 16, marginBottom: 8 }}>{title}</div>
+                <div style={{ fontFamily: '"JetBrains Mono", sans-serif', fontWeight: 600, fontSize: 16, marginBottom: 8 }}>{title}</div>
                 <div style={{ fontSize: 12, color: "#666", lineHeight: 1.7 }}>{desc}</div>
               </div>
             ))}
@@ -338,7 +338,7 @@ export default function App() {
       <Section id="contact" style={{ padding: "100px 0" }} className="grid-bg">
         <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 40px", textAlign: "center" }}>
           <span className="tag">CONTACT</span>
-          <h2 style={{ fontFamily: "'Syne', sans-serif", fontSize: "clamp(32px, 5vw, 60px)", fontWeight: 800, marginTop: 20, letterSpacing: "-0.02em", lineHeight: 1.1, marginBottom: 16 }}>
+          <h2 style={{ fontFamily: '"JetBrains Mono", sans-serif', fontSize: "clamp(32px, 5vw, 60px)", fontWeight: 800, marginTop: 20, letterSpacing: "-0.02em", lineHeight: 1.1, marginBottom: 16 }}>
             Start Your<br /><span style={{ color: "#c5773a" }}>Next Design</span>
           </h2>
           <p style={{ fontSize: 14, color: "#666", marginBottom: 40 }}>Reach out for a quote or to discuss your IC packaging requirements.</p>
@@ -356,7 +356,7 @@ export default function App() {
       <footer style={{ borderTop: "1px solid rgba(197,119,58,0.15)", padding: "24px 40px", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
           <div style={{ width: 24, height: 24, border: "1px solid rgba(197,119,58,0.4)", display: "grid", placeItems: "center", fontSize: 12 }}>◉</div>
-          <span style={{ fontFamily: "'Syne', sans-serif", fontWeight: 700, fontSize: 13, letterSpacing: "0.06em" }}>CuNest Interconnects</span>
+          <span style={{ fontFamily: '"JetBrains Mono", sans-serif', fontWeight: 700, fontSize: 13, letterSpacing: "0.06em" }}>CuNest Interconnects</span>
         </div>
         <div style={{ fontSize: 11, color: "#444", letterSpacing: "0.08em" }}>IC PACKAGING DESIGN SERVICES · ALWAYS RELIABLE</div>
       </footer>

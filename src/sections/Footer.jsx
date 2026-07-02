@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <Box component="footer" sx={{ bgcolor: '#0A1628', py: 12, borderTop: '1px solid rgba(255,255,255,0.05)' }}>
       <Container maxWidth="lg">
-        <Grid container spacing={8}>
+        <Grid container spacing={{ xs: 4, md: 8 }}>
           
           {/* Column 1: Brand */}
           <Grid item xs={12} md={3}>
@@ -18,47 +18,47 @@ const Footer = () => {
                 <circle cx="28" cy="36" r="6" stroke="#E8B884" strokeWidth="1.5" />
                 <circle cx="36" cy="36" r="6" stroke="#B87333" strokeWidth="1.5" />
               </svg>
-              <Typography sx={{ fontFamily: '"Inter", sans-serif', fontWeight: 800, color: '#FFFFFF' }}>
+              <Typography sx={{ fontFamily: '"JetBrains Mono", sans-serif', fontWeight: 800, color: '#FFFFFF' }}>
                 CuNest
               </Typography>
             </Box>
-            <Typography variant="body2" sx={{ color: '#94a3b8', lineHeight: 1.8, fontFamily: '"Inter", sans-serif' }}>
+            <Typography variant="body2" sx={{ color: '#94a3b8', lineHeight: 1.8, fontFamily: '"JetBrains Mono", sans-serif' }}>
               Precision Interconnects for the Next Generation of Computing. Sub-millimeter accuracy for mission-critical hardware.
             </Typography>
           </Grid>
 
           {/* Column 2: Links */}
           <Grid item xs={12} sm={6} md={3}>
-            <Typography variant="subtitle1" sx={{ color: '#fff', fontWeight: 700, mb: 3, fontFamily: '"Inter", sans-serif' }}>
+            <Typography variant="subtitle1" sx={{ color: '#fff', fontWeight: 700, mb: 3, fontFamily: '"JetBrains Mono", sans-serif' }}>
               Products
             </Typography>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
-              <MuiLink href="#" underline="hover" sx={{ color: '#94a3b8', '&:hover': { color: '#B87333' }, fontFamily: '"Inter", sans-serif', fontSize: '0.9rem' }}>Nest-Grip LGA Sockets</MuiLink>
-              <MuiLink href="#" underline="hover" sx={{ color: '#94a3b8', '&:hover': { color: '#B87333' }, fontFamily: '"Inter", sans-serif', fontSize: '0.9rem' }}>Edge-Rate PCIe Slots</MuiLink>
-              <MuiLink href="#" underline="hover" sx={{ color: '#94a3b8', '&:hover': { color: '#B87333' }, fontFamily: '"Inter", sans-serif', fontSize: '0.9rem' }}>Micro-Fit Power</MuiLink>
-              <MuiLink href="#" underline="hover" sx={{ color: '#94a3b8', '&:hover': { color: '#B87333' }, fontFamily: '"Inter", sans-serif', fontSize: '0.9rem' }}>Custom Spring Probes</MuiLink>
+              <MuiLink href="#" underline="hover" sx={{ color: '#94a3b8', '&:hover': { color: '#B87333' }, fontFamily: '"JetBrains Mono", sans-serif', fontSize: '0.9rem' }}>Nest-Grip LGA Sockets</MuiLink>
+              <MuiLink href="#" underline="hover" sx={{ color: '#94a3b8', '&:hover': { color: '#B87333' }, fontFamily: '"JetBrains Mono", sans-serif', fontSize: '0.9rem' }}>Edge-Rate PCIe Slots</MuiLink>
+              <MuiLink href="#" underline="hover" sx={{ color: '#94a3b8', '&:hover': { color: '#B87333' }, fontFamily: '"JetBrains Mono", sans-serif', fontSize: '0.9rem' }}>Micro-Fit Power</MuiLink>
+              <MuiLink href="#" underline="hover" sx={{ color: '#94a3b8', '&:hover': { color: '#B87333' }, fontFamily: '"JetBrains Mono", sans-serif', fontSize: '0.9rem' }}>Custom Spring Probes</MuiLink>
             </Box>
           </Grid>
 
           {/* Column 3: Links */}
           <Grid item xs={12} sm={6} md={3}>
-            <Typography variant="subtitle1" sx={{ color: '#fff', fontWeight: 700, mb: 3, fontFamily: '"Inter", sans-serif' }}>
+            <Typography variant="subtitle1" sx={{ color: '#fff', fontWeight: 700, mb: 3, fontFamily: '"JetBrains Mono", sans-serif' }}>
               Company
             </Typography>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
-              <MuiLink href="#" underline="hover" sx={{ color: '#94a3b8', '&:hover': { color: '#B87333' }, fontFamily: '"Inter", sans-serif', fontSize: '0.9rem' }}>About Us</MuiLink>
-              <MuiLink href="#" underline="hover" sx={{ color: '#94a3b8', '&:hover': { color: '#B87333' }, fontFamily: '"Inter", sans-serif', fontSize: '0.9rem' }}>Quality Assurance</MuiLink>
-              <MuiLink href="#" underline="hover" sx={{ color: '#94a3b8', '&:hover': { color: '#B87333' }, fontFamily: '"Inter", sans-serif', fontSize: '0.9rem' }}>Careers</MuiLink>
-              <MuiLink href="#" underline="hover" sx={{ color: '#94a3b8', '&:hover': { color: '#B87333' }, fontFamily: '"Inter", sans-serif', fontSize: '0.9rem' }}>Contact Support</MuiLink>
+              <MuiLink href="#" underline="hover" sx={{ color: '#94a3b8', '&:hover': { color: '#B87333' }, fontFamily: '"JetBrains Mono", sans-serif', fontSize: '0.9rem' }}>About Us</MuiLink>
+              <MuiLink href="#" underline="hover" sx={{ color: '#94a3b8', '&:hover': { color: '#B87333' }, fontFamily: '"JetBrains Mono", sans-serif', fontSize: '0.9rem' }}>Quality Assurance</MuiLink>
+              <MuiLink href="#" underline="hover" sx={{ color: '#94a3b8', '&:hover': { color: '#B87333' }, fontFamily: '"JetBrains Mono", sans-serif', fontSize: '0.9rem' }}>Careers</MuiLink>
+              <MuiLink href="#" underline="hover" sx={{ color: '#94a3b8', '&:hover': { color: '#B87333' }, fontFamily: '"JetBrains Mono", sans-serif', fontSize: '0.9rem' }}>Contact Support</MuiLink>
             </Box>
           </Grid>
 
           {/* Column 4: Newsletter */}
           <Grid item xs={12} md={3}>
-            <Typography variant="subtitle1" sx={{ color: '#fff', fontWeight: 700, mb: 3, fontFamily: '"Inter", sans-serif' }}>
+            <Typography variant="subtitle1" sx={{ color: '#fff', fontWeight: 700, mb: 3, fontFamily: '"JetBrains Mono", sans-serif' }}>
               Stay Updated
             </Typography>
-            <Typography variant="body2" sx={{ color: '#94a3b8', mb: 3, fontFamily: '"Inter", sans-serif' }}>
+            <Typography variant="body2" sx={{ color: '#94a3b8', mb: 3, fontFamily: '"JetBrains Mono", sans-serif' }}>
               Subscribe to our newsletter for the latest in interconnect technology.
             </Typography>
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
@@ -76,7 +76,7 @@ const Footer = () => {
         </Grid>
         
         <Box sx={{ mt: 12, pt: 4, borderTop: '1px solid rgba(255,255,255,0.05)', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 2 }}>
-          <Typography variant="body2" sx={{ color: '#64748b', fontFamily: '"Inter", sans-serif' }}>
+          <Typography variant="body2" sx={{ color: '#64748b', fontFamily: '"JetBrains Mono", sans-serif' }}>
             &copy; {new Date().getFullYear()} CuNest Interconnects. All rights reserved.
           </Typography>
           <Box sx={{ display: 'flex', gap: 3 }}>

@@ -74,15 +74,15 @@ function PcbDesignPage() {
         {/* Header Area */}
         <div className="text-center mb-16">
           <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <h1 className="text-4xl md:text-5xl font-bold uppercase tracking-tight text-[#8C5A2B] mb-4 font-['Inter',sans-serif]">
+            <h1 className="text-4xl md:text-5xl font-bold uppercase tracking-tight text-[#8C5A2B] mb-4 font-sans">
               PCB DESIGN SERVICE
             </h1>
             
-            <h2 className="text-xl md:text-2xl font-semibold text-[#0F3D3E] mb-6 font-['Inter',sans-serif]">
+            <h2 className="text-xl md:text-2xl font-semibold text-[#0F3D3E] mb-6 font-sans">
               Providing Turnkey PCB Design Services
             </h2>
 
-            <p className="max-w-4xl mx-auto text-gray-600 leading-relaxed text-lg font-['Inter',sans-serif]">
+            <p className="max-w-4xl mx-auto text-gray-600 leading-relaxed text-lg font-sans">
               We at CuNest offer full-spectrum PCB design services from Library Development, Schematic Drafting, Layout, Analysis, Validation to Quick Turn Prototyping, ensuring high-quality results for all your needs.
             </p>
           </motion.div>
@@ -102,7 +102,7 @@ function PcbDesignPage() {
                 {/* Copper Accent Line */}
                 <div className="w-12 h-1 bg-[#8C5A2B] rounded-full mb-6"></div>
                 
-                <h3 className="text-xl font-bold text-[#0F3D3E] mb-6 font-['Inter',sans-serif]">
+                <h3 className="text-xl font-bold text-[#0F3D3E] mb-6 font-sans">
                   {card.title}
                 </h3>
                 
@@ -110,7 +110,7 @@ function PcbDesignPage() {
                   {card.items.map((item, i) => (
                     <li 
                       key={i}
-                      className="text-gray-500 transition-colors duration-200 hover:text-[#8C5A2B] font-['Inter',sans-serif]"
+                      className="text-gray-500 transition-colors duration-200 hover:text-[#8C5A2B] font-sans"
                     >
                       {item}
                     </li>

@@ -169,7 +169,7 @@ function ProjectsSection() {
               variant="h4"
               sx={{
                 mb: 2,
-                fontFamily: '"Syne", sans-serif',
+                fontFamily: '"JetBrains Mono", sans-serif',
                 color: '#ffffff',
               }}
             >
@@ -234,7 +234,7 @@ function ProjectsSection() {
                   <Typography
                     variant="h4"
                     sx={{
-                      fontFamily: '"Syne", sans-serif',
+                      fontFamily: '"JetBrains Mono", sans-serif',
                       color: '#10b981', // Value rendered in Emerald accent
                       fontWeight: 600,
                     }}
@@ -270,7 +270,7 @@ function ProjectsSection() {
                   variant="h5"
                   sx={{
                     mb: 3,
-                    fontFamily: '"Syne", sans-serif',
+                    fontFamily: '"JetBrains Mono", sans-serif',
                     color: '#ffffff',
                   }}
                 >
@@ -311,7 +311,7 @@ function ProjectsSection() {
                   variant="h5"
                   sx={{
                     mb: 3,
-                    fontFamily: '"Syne", sans-serif',
+                    fontFamily: '"JetBrains Mono", sans-serif',
                     color: '#ffffff',
                   }}
                 >
@@ -434,7 +434,7 @@ function ProjectsSection() {
                         variant="h5"
                         sx={{
                           mb: 1.5,
-                          fontFamily: '"Syne", sans-serif',
+                          fontFamily: '"JetBrains Mono", sans-serif',
                           color: '#ffffff',
                           fontWeight: 600,
                         }}

@@ -39,7 +39,7 @@ function ServicesSection() {
         <Typography variant="overline" sx={{ color: 'text.secondary', mb: 2, letterSpacing: '0.35em' }}>
           Package Design Technologies
         </Typography>
-        <Typography variant="h3" sx={{ maxWidth: 660, mb: 5, fontFamily: '"Syne", sans-serif' }}>
+        <Typography variant="h3" sx={{ maxWidth: 660, mb: 5, fontFamily: '"JetBrains Mono", sans-serif' }}>
           Premium substrate engineering for advanced IC packaging.
         </Typography>
         <Grid container spacing={3}>
@@ -67,7 +67,7 @@ function ServicesSection() {
                   }}
                 >
                   <Box sx={{ mb: 3, color: '#C5773A' }}>{service.icon}</Box>
-                  <Typography variant="h6" sx={{ mb: 1, fontFamily: '"Syne", sans-serif' }}>
+                  <Typography variant="h6" sx={{ mb: 1, fontFamily: '"JetBrains Mono", sans-serif' }}>
                     {service.title}
                   </Typography>
                   <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>

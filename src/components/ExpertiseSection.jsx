@@ -74,7 +74,7 @@ function ExpertiseSection() {
                       }}
                     >
                       <Box sx={{ color: '#C5773A', mb: 2 }}>{tool.icon}</Box>
-                      <Typography variant="h6" sx={{ mb: 1, fontFamily: '"Syne", sans-serif' }}>
+                      <Typography variant="h6" sx={{ mb: 1, fontFamily: '"JetBrains Mono", sans-serif' }}>
                         {tool.title}
                       </Typography>
                       <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>

@@ -27,7 +27,7 @@ function WhyCuNestSection() {
         <Typography variant="overline" sx={{ color: 'text.secondary', mb: 2, letterSpacing: '0.35em' }}>
           Why CuNest
         </Typography>
-        <Typography variant="h3" sx={{ mb: 5, fontFamily: '"Syne", sans-serif', maxWidth: 680 }}>
+        <Typography variant="h3" sx={{ mb: 5, fontFamily: '"JetBrains Mono", sans-serif', maxWidth: 680 }}>
           Premium support and delivery for your most demanding package programs.
         </Typography>
         <Grid container spacing={3}>
@@ -55,7 +55,7 @@ function WhyCuNestSection() {
                   }}
                 >
                   <Box sx={{ color: '#C5773A', mb: 2 }}>{feature.icon}</Box>
-                  <Typography variant="h6" sx={{ mb: 1, fontFamily: '"Syne", sans-serif' }}>
+                  <Typography variant="h6" sx={{ mb: 1, fontFamily: '"JetBrains Mono", sans-serif' }}>
                     {feature.title}
                   </Typography>
                   <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
