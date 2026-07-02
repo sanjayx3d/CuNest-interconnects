@@ -1,8 +1,8 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Box, Container, Typography } from '@mui/material';
 import { motion, AnimatePresence } from 'framer-motion';
-import Particles from "react-tsparticles";
-import { loadSlim } from "tsparticles-slim";
+import Particles, { ParticlesProvider } from "@tsparticles/react";
+import { loadSlim } from "@tsparticles/slim";
 import { Link } from 'react-router-dom';
 
 const slides = [
@@ -53,83 +53,84 @@ function HeroSection() {
       }}
     >
       {/* Particle Background */}
-      <Particles
-        id="tsparticles"
-        init={particlesInit}
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          zIndex: 0,
-        }}
-        options={{
-          fullScreen: { enable: false },
-          fpsLimit: 60,
-          interactivity: {
-            events: {
-              onHover: {
-                enable: true,
-                mode: "grab",
+      <ParticlesProvider init={particlesInit}>
+        <Particles
+          id="tsparticles"
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            zIndex: 0,
+          }}
+          options={{
+            fullScreen: { enable: false },
+            fpsLimit: 60,
+            interactivity: {
+              events: {
+                onHover: {
+                  enable: true,
+                  mode: "grab",
+                },
+                resize: true,
               },
-              resize: true,
-            },
-            modes: {
-              grab: {
-                distance: 200,
-                links: {
-                  opacity: 0.8,
-                  color: "#B87333"
+              modes: {
+                grab: {
+                  distance: 200,
+                  links: {
+                    opacity: 0.8,
+                    color: "#B87333"
+                  },
                 },
               },
             },
-          },
-          particles: {
-            color: {
-              value: "#B87333",
-            },
-            links: {
-              color: "#B87333",
-              distance: 150,
-              enable: true,
-              opacity: 0.3,
-              width: 1,
-            },
-            move: {
-              direction: "none",
-              enable: true,
-              outModes: {
-                default: "bounce",
+            particles: {
+              color: {
+                value: "#B87333",
               },
-              random: false,
-              speed: 1,
-              straight: false,
-            },
-            number: {
-              density: {
+              links: {
+                color: "#B87333",
+                distance: 150,
                 enable: true,
-                area: 800,
+                opacity: 0.3,
+                width: 1,
               },
-              value: 60,
+              move: {
+                direction: "none",
+                enable: true,
+                outModes: {
+                  default: "bounce",
+                },
+                random: false,
+                speed: 1,
+                straight: false,
+              },
+              number: {
+                density: {
+                  enable: true,
+                  area: 800,
+                },
+                value: 60,
+              },
+              opacity: {
+                value: 0.5,
+              },
+              shape: {
+                type: "square",
+              },
+              size: {
+                value: { min: 1, max: 3 },
+              },
             },
-            opacity: {
-              value: 0.5,
-            },
-            shape: {
-              type: "square",
-            },
-            size: {
-              value: { min: 1, max: 3 },
-            },
-          },
-          detectRetina: true,
-        }}
-      />
+            detectRetina: true,
+          }}
+        />
+      </ParticlesProvider>
 
       {/* Main Content Container */}
       <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1, textAlign: 'center', pt: { xs: 12, md: 0 } }}>
-
+        
         {/* Dynamic Sliding Text Area */}
         <Box sx={{ minHeight: { xs: '240px', md: '280px' }, display: 'flex', flexDirection: 'column', justifyContent: 'center', mb: 6 }}>
           <AnimatePresence mode="wait">
@@ -158,7 +159,7 @@ function HeroSection() {
               >
                 {slides[currentSlide].headline}
               </Typography>
-
+              
               <Typography
                 variant="body1"
                 sx={{
@@ -177,13 +178,13 @@ function HeroSection() {
         </Box>
 
         {/* Fixed CTA Buttons (Do not slide) */}
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: { xs: 'column', sm: 'row' },
-            justifyContent: 'center',
+        <Box 
+          sx={{ 
+            display: 'flex', 
+            flexDirection: { xs: 'column', sm: 'row' }, 
+            justifyContent: 'center', 
             alignItems: 'center',
-            gap: { xs: 2, sm: 3 }
+            gap: { xs: 2, sm: 3 } 
           }}
         >
           <Link to="/#expertise" className="w-full sm:w-auto">
@@ -191,7 +192,7 @@ function HeroSection() {
               Explore Services
             </button>
           </Link>
-
+          
           <Link to="/contact" className="w-full sm:w-auto">
             <button className="w-full px-10 py-4 rounded-full bg-transparent border-2 border-white text-white font-bold uppercase tracking-widest hover:bg-white hover:text-[#07090C] transition-all duration-300 hover:scale-105">
               Contact Us
