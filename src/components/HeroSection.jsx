@@ -129,7 +129,7 @@ function HeroSection() {
 
       {/* Main Content Container */}
       <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1, textAlign: 'center', pt: { xs: 12, md: 0 } }}>
-        
+
         {/* Dynamic Sliding Text Area */}
         <Box sx={{ minHeight: { xs: '240px', md: '280px' }, display: 'flex', flexDirection: 'column', justifyContent: 'center', mb: 6 }}>
           <AnimatePresence mode="wait">
@@ -158,7 +158,7 @@ function HeroSection() {
               >
                 {slides[currentSlide].headline}
               </Typography>
-              
+
               <Typography
                 variant="body1"
                 sx={{
@@ -177,13 +177,13 @@ function HeroSection() {
         </Box>
 
         {/* Fixed CTA Buttons (Do not slide) */}
-        <Box 
-          sx={{ 
-            display: 'flex', 
-            flexDirection: { xs: 'column', sm: 'row' }, 
-            justifyContent: 'center', 
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: { xs: 'column', sm: 'row' },
+            justifyContent: 'center',
             alignItems: 'center',
-            gap: { xs: 2, sm: 3 } 
+            gap: { xs: 2, sm: 3 }
           }}
         >
           <Link to="/#expertise" className="w-full sm:w-auto">
@@ -191,7 +191,7 @@ function HeroSection() {
               Explore Services
             </button>
           </Link>
-          
+
           <Link to="/contact" className="w-full sm:w-auto">
             <button className="w-full px-10 py-4 rounded-full bg-transparent border-2 border-white text-white font-bold uppercase tracking-widest hover:bg-white hover:text-[#07090C] transition-all duration-300 hover:scale-105">
               Contact Us
