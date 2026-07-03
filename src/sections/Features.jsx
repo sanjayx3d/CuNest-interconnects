@@ -17,7 +17,7 @@ const featuresData = [
         transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
         className="flex justify-center"
       >
-        <MemoryOutlinedIcon sx={{ fontSize: 64, color: '#1A1A2E' }} />
+        <MemoryOutlinedIcon sx={{ fontSize: 64, color: 'white' }} />
       </motion.div>
     )
   },
@@ -31,7 +31,7 @@ const featuresData = [
         transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
         className="flex justify-center"
       >
-        <LayersOutlinedIcon sx={{ fontSize: 64, color: '#1A1A2E' }} />
+        <LayersOutlinedIcon sx={{ fontSize: 64, color: 'white' }} />
       </motion.div>
     )
   },
@@ -45,7 +45,7 @@ const featuresData = [
         transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
         className="flex justify-center"
       >
-        <GraphicEqOutlinedIcon sx={{ fontSize: 64, color: '#1A1A2E' }} />
+        <GraphicEqOutlinedIcon sx={{ fontSize: 64, color: 'white' }} />
       </motion.div>
     )
   }
@@ -62,30 +62,136 @@ const containerVariants = {
 };
 
 const itemVariants = [
-  // Left Card (Slides in from left)
-  {
-    hidden: { opacity: 0, x: -100 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: 'easeOut' } }
-  },
-  // Center Card (Drops down from above)
-  {
-    hidden: { opacity: 0, y: -50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } }
-  },
-  // Right Card (Slides in from right)
-  {
-    hidden: { opacity: 0, x: 100 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: 'easeOut' } }
-  }
+  { hidden: { opacity: 0, x: -100 }, visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: 'easeOut' } } },
+  { hidden: { opacity: 0, y: -50 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } } },
+  { hidden: { opacity: 0, x: 100 }, visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: 'easeOut' } } }
 ];
+
+const renderBackgroundSVG = (index) => {
+  switch (index) {
+    case 0:
+      return (
+        <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <rect x="0" y="0" width="100" height="100" fill="transparent" stroke="#A66B3F" strokeWidth="0.1" opacity="0.3" />
+          <rect x="35" y="35" width="30" height="30" rx="2" stroke="#A66B3F" strokeWidth="1" fill="rgba(166,107,63,0.1)" />
+          <motion.rect
+            x="40" y="40" width="20" height="20" rx="1" fill="#A66B3F"
+            animate={{ opacity: [0.3, 0.7, 0.3] }}
+            transition={{ repeat: Infinity, duration: 10, ease: "easeInOut" }}
+          />
+          {[
+            "M 35 45 L 20 45 L 10 35", "M 35 55 L 20 55 L 10 65", "M 65 45 L 80 45 L 90 35",
+            "M 65 55 L 80 55 L 90 65", "M 45 35 L 45 20 L 35 10", "M 55 35 L 55 20 L 65 10",
+            "M 45 65 L 45 80 L 35 90", "M 55 65 L 55 80 L 65 90"
+          ].map((path, i) => (
+            <React.Fragment key={i}>
+              <path d={path} fill="transparent" stroke="#A66B3F" strokeWidth="0.3" opacity="0.4" />
+              <motion.path
+                d={path} fill="transparent" stroke="#A66B3F" strokeWidth="1"
+                initial={{ pathLength: 0, opacity: 0.2 }}
+                animate={{ pathLength: [0, 1, 1], opacity: [0.2, 1, 0.2] }}
+                transition={{ repeat: Infinity, duration: 15, delay: i * 1, ease: "easeInOut" }}
+              />
+            </React.Fragment>
+          ))}
+          {[
+            { x: 10, y: 35 }, { x: 10, y: 65 }, { x: 90, y: 35 }, { x: 90, y: 65 },
+            { x: 35, y: 10 }, { x: 65, y: 10 }, { x: 35, y: 90 }, { x: 65, y: 90 }
+          ].map((node, i) => (
+            <motion.circle
+              key={`node-${i}`} cx={node.x} cy={node.y} r="1.5" fill="#A66B3F"
+              animate={{ scale: [1, 1.5, 1], opacity: [0.4, 1, 0.4] }}
+              transition={{ repeat: Infinity, duration: 10, delay: i * 1.5, ease: "easeInOut" }}
+            />
+          ))}
+        </svg>
+      );
+    case 1:
+      return (
+        <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <rect x="25" y="25" width="50" height="50" rx="3" stroke="#A66B3F" strokeWidth="1" fill="transparent" opacity="0.6" />
+          <motion.rect
+            x="40" y="40" width="20" height="20" fill="rgba(166,107,63,0.2)" stroke="#A66B3F" strokeWidth="0.5"
+            animate={{ opacity: [0.3, 0.8, 0.3] }}
+            transition={{ repeat: Infinity, duration: 15, ease: "easeInOut" }}
+          />
+          {[
+            { d: "M 40 45 Q 30 40 25 45", cx: 25, cy: 45 }, { d: "M 40 55 Q 30 60 25 55", cx: 25, cy: 55 },
+            { d: "M 60 45 Q 70 40 75 45", cx: 75, cy: 45 }, { d: "M 60 55 Q 70 60 75 55", cx: 75, cy: 55 },
+            { d: "M 45 40 Q 40 30 45 25", cx: 45, cy: 25 }, { d: "M 55 40 Q 60 30 55 25", cx: 55, cy: 25 },
+            { d: "M 45 60 Q 40 70 45 75", cx: 45, cy: 75 }, { d: "M 55 60 Q 60 70 55 75", cx: 55, cy: 75 }
+          ].map((wire, i) => (
+            <React.Fragment key={i}>
+              <motion.path
+                d={wire.d} fill="transparent" stroke="#A66B3F" strokeWidth="0.8"
+                initial={{ pathLength: 0, opacity: 0.2 }}
+                animate={{ pathLength: [0, 1, 1], opacity: [0.2, 1, 0.2] }}
+                transition={{ repeat: Infinity, duration: 12.5, delay: i * 0.75, ease: "easeInOut" }}
+              />
+              <circle cx={wire.cx} cy={wire.cy} r="1" fill="#A66B3F" opacity="0.6" />
+            </React.Fragment>
+          ))}
+          {Array.from({ length: 5 }).map((_, row) =>
+            Array.from({ length: 5 }).map((_, col) => (
+              <motion.circle
+                key={`bga-${row}-${col}`} cx={30 + col * 10} cy={30 + row * 10} r="0.8" fill="#A66B3F"
+                animate={{ opacity: [0.1, 0.5, 0.1] }}
+                transition={{ repeat: Infinity, duration: 10, delay: (row + col) * 1, ease: "easeInOut" }}
+              />
+            ))
+          )}
+        </svg>
+      );
+    case 2:
+      return (
+        <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <g opacity="0.2">
+            {Array.from({ length: 10 }).map((_, i) => (
+              <React.Fragment key={i}>
+                <line x1="0" y1={i * 10} x2="100" y2={i * 10} stroke="#A66B3F" strokeWidth="0.2" />
+                <line x1={i * 10} y1="0" x2={i * 10} y2="100" stroke="#A66B3F" strokeWidth="0.2" />
+              </React.Fragment>
+            ))}
+          </g>
+          {[
+            "M 0 30 C 30 30 30 70 50 70 C 70 70 70 30 100 30", "M 0 35 C 30 35 30 75 50 75 C 70 75 70 35 100 35"
+          ].map((path, i) => (
+            <React.Fragment key={`diff-${i}`}>
+              <path d={path} fill="transparent" stroke="#A66B3F" strokeWidth="0.3" opacity="0.4" />
+              <motion.path
+                d={path} fill="transparent" stroke="#A66B3F" strokeWidth="1.5"
+                initial={{ pathLength: 0, opacity: 0.2 }}
+                animate={{ pathLength: [0, 1, 1], opacity: [0.2, 1, 0.2] }}
+                transition={{ repeat: Infinity, duration: 12.5, delay: i * 1.5, ease: "easeInOut" }}
+              />
+            </React.Fragment>
+          ))}
+          <g transform="translate(25, 10) scale(0.5)">
+            <rect x="0" y="0" width="100" height="40" rx="2" stroke="#A66B3F" strokeWidth="1" fill="rgba(15,61,62,0.8)" opacity="0.8" />
+            {[
+              "M 10 20 Q 50 -10 90 20", "M 10 20 Q 50 50 90 20", "M 10 20 Q 30 0 50 20 T 90 20", "M 10 20 Q 30 40 50 20 T 90 20"
+            ].map((eyePath, i) => (
+              <motion.path
+                key={`eye-${i}`} d={eyePath} fill="transparent" stroke="#A66B3F" strokeWidth="1"
+                animate={{ opacity: [0.2, 0.8, 0.2] }}
+                transition={{ repeat: Infinity, duration: 5 + i * 1, ease: "easeInOut" }}
+              />
+            ))}
+          </g>
+        </svg>
+
+      );
+    default: return null;
+  }
+};
 
 const Features = () => {
   return (
-    <div id="expertise" className="bg-white pt-20 md:pt-[140px] pb-24 md:pb-32 relative font-sans">
+    <div id="expertise" className="bg-[#FBF8F1] pt-20 md:pt-[140px] pb-24 md:pb-32 relative font-sans">
       <Container maxWidth="lg">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-6xl font-black tracking-tight mb-6 font-sans bg-gradient-to-r from-[#8C5A2B] to-[#0F3D3E] text-transparent bg-clip-text">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-black tracking-tight mb-6 font-sans text-[#0F3D3E]">
             Your Blueprint. Our Expertise.
           </h2>
           <p className="max-w-[800px] mx-auto text-gray-700 text-lg leading-relaxed font-sans">
@@ -104,23 +210,33 @@ const Features = () => {
           {featuresData.map((feature, index) => (
             <motion.div key={index} variants={itemVariants[index]} className="h-full">
               <Link to={feature.path} className="block h-full no-underline">
-                <motion.div 
-                  whileHover={{ scale: 1.05, boxShadow: '0px 20px 40px rgba(0,0,0,0.1)' }}
-                  className="h-full bg-white border border-gray-200 rounded-2xl p-8 flex flex-col items-center text-center transition-colors duration-300"
+                <div
+                  className="group relative h-full rounded-2xl overflow-hidden bg-[#0F3D3E] shadow-xl hover:scale-105 transition-transform duration-300"
                 >
-                  <div className="mb-6">
-                    {feature.icon}
+                  {/* Background Animated SVG Layer - Hides on hover to clear text readability. Hidden entirely on mobile. */}
+                  <div className="hidden md:block absolute inset-0 z-0 origin-center group-hover:opacity-0 transition-opacity duration-500 ease-in-out">
+                    {renderBackgroundSVG(index)}
                   </div>
-                  <h3 className="text-xl font-extrabold mb-4 tracking-wide font-sans bg-gradient-to-r from-[#8C5A2B] to-[#0F3D3E] text-transparent bg-clip-text">
-                    {feature.title}
-                  </h3>
-                  <p className="text-[#333333] font-medium leading-relaxed mb-8 flex-grow font-sans">
-                    {feature.description}
-                  </p>
-                  <div className="text-[#B87333] font-bold uppercase tracking-widest text-sm flex items-center gap-2 font-sans">
-                    Learn More <span>&rarr;</span>
+
+                  {/* Foreground Layer - Fully transparent background so SVG is visible. All text is white. */}
+                  <div className="relative z-10 h-full p-8 flex flex-col items-center text-center">
+                    <div className="mb-6 drop-shadow-md">
+                      {feature.icon}
+                    </div>
+                    <div className="mb-4">
+                      <h3 className="text-2xl font-bold tracking-wide font-sans text-white drop-shadow-md">
+                        {feature.title}
+                      </h3>
+                      <div className="w-12 h-1 bg-[#A66B3F] mt-2 mx-auto rounded-full"></div>
+                    </div>
+                    <p className="text-white/90 group-hover:text-white font-medium leading-relaxed mb-8 flex-grow font-sans drop-shadow-sm transition-colors">
+                      {feature.description}
+                    </p>
+                    <div className="text-[#A66B3F] group-hover:text-white font-bold uppercase tracking-widest text-sm flex items-center gap-2 font-sans transition-colors duration-300">
+                      Learn More <span className="transform group-hover:translate-x-1 transition-transform">&rarr;</span>
+                    </div>
                   </div>
-                </motion.div>
+                </div>
               </Link>
             </motion.div>
           ))}

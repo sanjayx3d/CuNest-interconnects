@@ -1,91 +1,47 @@
 import React from 'react';
-import { Box, Container, Grid, Typography, Paper } from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 
-const IndustryCard = ({ title, description, image, delay }) => (
-  <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay }} style={{ height: '100%' }}>
-    <Paper
-      elevation={0}
-      sx={{
-        borderRadius: '16px',
-        overflow: 'hidden',
-        display: 'flex',
-        flexDirection: 'column',
-        height: '100%',
-        minHeight: '450px',
-        backgroundColor: '#ffffff',
-        boxShadow: '0 10px 30px rgba(0, 0, 0, 0.05)',
-        border: '1px solid rgba(0,0,0,0.05)',
-        transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-        '&:hover': {
-          transform: 'translateY(-8px)',
-          boxShadow: '0 20px 40px rgba(0, 0, 0, 0.1)',
-        }
-      }}
-    >
-      {/* Top Half: High-tech image */}
-      <Box
-        sx={{
-          height: '240px',
-          backgroundImage: `url(${image})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      />
-      
-      {/* Bottom Half: White text block */}
-      <Box
-        sx={{
-          flexGrow: 1,
-          p: 4,
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'flex-start',
-          justifyContent: 'flex-start',
-          textAlign: 'left',
-        }}
-      >
-        <Typography
-          variant="h5"
-          sx={{
-            color: '#0a2540',
-            fontWeight: 700,
-            mb: 2,
-            fontFamily: '"JetBrains Mono", sans-serif',
-          }}
-        >
-          {title}
-        </Typography>
-        <Typography
-          variant="body1"
-          sx={{
-            color: '#666666',
-            lineHeight: 1.6,
-            fontFamily: '"JetBrains Mono", sans-serif',
-            mb: 4,
-            flexGrow: 1,
-            fontSize: '0.95rem'
-          }}
-        >
-          {description}
-        </Typography>
-        <Typography
-          sx={{
-            color: '#B87333',
-            fontWeight: 700,
-            fontFamily: '"JetBrains Mono", sans-serif',
-            display: 'flex',
-            alignItems: 'center',
-            cursor: 'pointer',
-            '&:hover': {
-              color: '#8C5A2B'
-            }
-          }}
-        >
-          Learn More &rarr;
-        </Typography>
-      </Box>
-    </Paper>
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+};
+
+const IndustryCard = ({ title, description, image }) => (
+  <motion.div 
+    variants={itemVariants}
+    whileHover={{ y: -5, boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)' }}
+    className="rounded-2xl overflow-hidden bg-white shadow-xl hover:shadow-2xl transition-all duration-300 h-full flex flex-col relative group"
+  >
+    {/* Top Half (Image) with Seamless Blend */}
+    <div className="relative h-64 w-full shrink-0">
+      <img src={image} alt={title} className="w-full h-full object-cover" />
+      {/* The Seamless Blend (Crucial) */}
+      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent via-white/50 to-white"></div>
+    </div>
+    
+    {/* Bottom Half (Text) */}
+    <div className="p-6 bg-white flex-grow flex flex-col relative z-10 -mt-4">
+      <h3 className="font-bold text-[#0F3D3E] text-xl mb-3 font-sans">
+        {title}
+      </h3>
+      <p className="text-gray-600 leading-relaxed font-sans mb-6 flex-grow">
+        {description}
+      </p>
+      <div className="text-[#A66B3F] font-bold uppercase tracking-widest text-sm flex items-center gap-2 font-sans cursor-pointer">
+        Learn More <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
+      </div>
+    </div>
   </motion.div>
 );
 
@@ -121,38 +77,35 @@ function IndustriesSection() {
           We provide cutting-edge solutions across major tech sectors.
         </Typography>
 
-        <Grid container spacing={4} justifyContent="center">
-          
+        {/* Framer Motion Grid with Staggered Entrance */}
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+        >
           {/* Semiconductor */}
-          <Grid item xs={12} md={4}>
-            <IndustryCard
-              title="Semiconductor"
-              description="We design and manufacture advanced semiconductor components for a wide range of industries, ensuring high performance and energy efficiency in all applications."
-              image="/semiconductor.png"
-              delay={0.1}
-            />
-          </Grid>
+          <IndustryCard
+            title="Semiconductor"
+            description="We design and manufacture advanced semiconductor components for a wide range of industries, ensuring high performance and energy efficiency in all applications."
+            image="/semiconductor.png?v=2"
+          />
 
           {/* Automotive */}
-          <Grid item xs={12} md={4}>
-            <IndustryCard
-              title="Automotive"
-              description="Our innovative technologies support the automotive industry, from vehicle electronics to advanced driver-assistance systems (ADAS), ensuring safety and reliability on the road."
-              image="/automotive.png"
-              delay={0.3}
-            />
-          </Grid>
+          <IndustryCard
+            title="Automotive"
+            description="Our innovative technologies support the automotive industry, from vehicle electronics to advanced driver-assistance systems (ADAS), ensuring safety and reliability on the road."
+            image="/automotive.png?v=2"
+          />
 
           {/* Healthcare */}
-          <Grid item xs={12} md={4}>
-            <IndustryCard
-              title="Health Care"
-              description="We provide cutting-edge solutions for the healthcare industry, enabling advanced medical devices and diagnostic equipment."
-              image="https://images.unsplash.com/photo-1576091160550-2173ff9e5eb4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-              delay={0.5}
-            />
-          </Grid>
-        </Grid>
+          <IndustryCard
+            title="Health Care"
+            description="We provide cutting-edge solutions for the healthcare industry, enabling advanced medical devices and diagnostic equipment."
+            image="/healthcare.png?v=2"
+          />
+        </motion.div>
       </Container>
     </Box>
   );
