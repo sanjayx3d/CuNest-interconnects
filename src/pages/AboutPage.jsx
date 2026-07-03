@@ -88,6 +88,8 @@ const AboutPage = () => {
                     transition: 'all 0.3s ease',
                     display: 'flex',
                     flexDirection: 'column',
+                    alignItems: 'center',
+                    textAlign: 'center',
                     '&:hover': {
                       transform: 'translateY(-5px)',
                       boxShadow: '0 20px 40px rgba(15, 61, 62, 0.08)',
