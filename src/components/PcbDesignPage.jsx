@@ -102,7 +102,7 @@ function PcbDesignPage() {
                 {/* Copper Accent Line */}
                 <div className="w-12 h-1 bg-[#8C5A2B] rounded-full mb-6"></div>
                 
-                <h3 className="text-xl font-bold text-black mb-6 font-sans">
+                <h3 className="text-lg font-bold text-black mb-6 font-sans">
                   {card.title}
                 </h3>
                 
@@ -110,7 +110,7 @@ function PcbDesignPage() {
                   {card.items.map((item, i) => (
                     <li 
                       key={i}
-                      className="text-[#8C5A2B]/90 font-medium font-sans"
+                      className="text-[#6B4423] font-medium font-sans leading-relaxed mb-2"
                     >
                       {item}
                     </li>
