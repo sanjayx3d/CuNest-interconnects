@@ -187,7 +187,7 @@ const renderBackgroundSVG = (index) => {
 
 const Features = () => {
   return (
-    <div id="expertise" className="bg-[#FBF8F1] pt-20 md:pt-[140px] pb-24 md:pb-32 relative font-sans">
+    <div id="expertise" className="bg-[#FBF8F1] pt-20 md:pt-[140px] pb-24 md:pb-32 relative overflow-hidden font-sans">
       <Container maxWidth="lg">
         {/* Header Section */}
         <div className="text-center mb-16">
