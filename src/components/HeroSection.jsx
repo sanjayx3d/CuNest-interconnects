@@ -8,8 +8,8 @@ import { Link } from 'react-router-dom';
 const slides = [
   {
     id: 1,
-    headline: 'Fast Fabrication. Flawless Execution.',
-    subtext: 'Circuits. New purpose-built for high-performance cabling.',
+    headline: 'Protecting the Core. Powering the Future.',
+    subtext: 'Advanced IC packaging that protects chip integrity and drives next-gen performance.',
   },
   {
     id: 2,
