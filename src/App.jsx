@@ -3,8 +3,6 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { Box, CircularProgress } from '@mui/material';
 import Layout from './components/Layout';
-import { useDispatch } from 'react-redux';
-import { setScrollY } from './store/uiSlice';
 
 // Lazy loading pages
 const Home = lazy(() => import('./pages/Home'));
@@ -28,15 +26,12 @@ const FallbackLoader = () => (
 
 function App() {
   const location = useLocation();
-  const dispatch = useDispatch();
 
   useEffect(() => {
-    const handleScroll = () => {
-      dispatch(setScrollY(window.scrollY));
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [dispatch]);
+    if (!location.hash) {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    }
+  }, [location.pathname, location.hash]);
 
   return (
     <Layout>

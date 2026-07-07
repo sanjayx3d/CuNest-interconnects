@@ -30,8 +30,8 @@ const Home = () => {
         const id = location.hash.replace('#', '');
         const element = document.getElementById(id);
         if (element) {
-          // Adjust for navbar height (approx 80px)
-          const y = element.getBoundingClientRect().top + window.scrollY - 80;
+          // Adjust for navbar height + extra breathing room (approx 120px)
+          const y = element.getBoundingClientRect().top + window.scrollY - 120;
           window.scrollTo({ top: y, behavior: 'smooth' });
         }
       }, 100);

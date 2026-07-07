@@ -66,7 +66,7 @@ function PcbDesignPage() {
         {/* Back Button */}
         <IconButton 
           onClick={() => navigate('/')} 
-          sx={{ mb: 6, color: '#0F3D3E', backgroundColor: 'rgba(255,255,255,0.5)', backdropFilter: 'blur(10px)', '&:hover': { backgroundColor: 'rgba(255,255,255,0.8)' } }}
+          sx={{ mt: '20px', mb: 6, color: '#0F3D3E', backgroundColor: 'rgba(255,255,255,0.5)', backdropFilter: 'blur(10px)', '&:hover': { backgroundColor: 'rgba(255,255,255,0.8)' } }}
         >
           <ArrowBackIcon />
         </IconButton>

@@ -2,8 +2,6 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   isMenuOpen: false,
-  cursorVariant: 'default',
-  scrollY: 0,
 };
 
 export const uiSlice = createSlice({
@@ -16,15 +14,9 @@ export const uiSlice = createSlice({
     setMenuOpen: (state, action) => {
       state.isMenuOpen = action.payload;
     },
-    setCursorVariant: (state, action) => {
-      state.cursorVariant = action.payload;
-    },
-    setScrollY: (state, action) => {
-      state.scrollY = action.payload;
-    },
   },
 });
 
-export const { toggleMenu, setMenuOpen, setCursorVariant, setScrollY } = uiSlice.actions;
+export const { toggleMenu, setMenuOpen } = uiSlice.actions;
 
 export default uiSlice.reducer;

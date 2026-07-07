@@ -54,9 +54,9 @@ function IcPackagingPage() {
 
       <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
         {/* Back Button */}
-        <IconButton
-          onClick={() => navigate('/')}
-          sx={{ mb: 6, color: '#0F3D3E', backgroundColor: 'rgba(255,255,255,0.5)', backdropFilter: 'blur(10px)', '&:hover': { backgroundColor: 'rgba(255,255,255,0.8)' } }}
+        <IconButton 
+          onClick={() => navigate('/')} 
+          sx={{ mt: '20px', mb: 6, color: '#0F3D3E', backgroundColor: 'rgba(255,255,255,0.5)', backdropFilter: 'blur(10px)', '&:hover': { backgroundColor: 'rgba(255,255,255,0.8)' } }}
         >
           <ArrowBackIcon />
         </IconButton>

@@ -25,7 +25,14 @@ const Navbar = () => {
   const activeLink = navLinks.find(l => l.path === location.pathname)?.title || 'Home';
 
   const Logo = () => (
-    <Link to="/" className="flex items-center no-underline">
+    <Link
+      to="/"
+      className="flex items-center no-underline"
+      onClick={() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        setIsMobileMenuOpen(false);
+      }}
+    >
       <motion.div
         whileHover={{ scale: 1.02, filter: 'drop-shadow(0px 0px 20px rgba(166,107,63,0.5))' }}
         whileTap={{ scale: 0.98 }}
@@ -101,9 +108,17 @@ const Navbar = () => {
                   onMouseEnter={() => setHoveredLink(link.title)}
                   onMouseLeave={() => setHoveredLink(null)}
                 >
-                  <Link to={link.path} className="no-underline relative z-10 block">
+                  <Link
+                    to={link.path}
+                    className="no-underline relative z-10 block"
+                    onClick={() => {
+                      if (link.path === '/') {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      }
+                    }}
+                  >
                     <motion.span
-                      whileHover={{ x: 2, color: '#A66B3F' }}
+                      whileHover={{ x: 2, color: '#FFFFFF' }}
                       transition={{ type: 'spring', stiffness: 300 }}
                       className={`font-medium block transition-colors ${activeLink === link.title ? 'text-white' : 'text-white/80'}`}
                     >
@@ -127,15 +142,6 @@ const Navbar = () => {
                 </div>
               ))}
 
-              <Link to="/pcb-fabrication" className="no-underline ml-4">
-                <motion.button
-                  whileHover={{ scale: 1.02, backgroundColor: 'rgba(166, 107, 63, 0.1)' }}
-                  whileTap={{ scale: 0.98 }}
-                  className="px-8 py-2.5 rounded-sm bg-transparent border-2 border-[#A66B3F] text-white text-[14px] font-bold uppercase tracking-wider transition-all duration-300"
-                >
-                  PCB Fabrication
-                </motion.button>
-              </Link>
             </Box>
 
             {/* Mobile Menu Icon */}
@@ -202,11 +208,16 @@ const Navbar = () => {
                 >
                   <Link
                     to={link.path}
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    onClick={() => {
+                      setIsMobileMenuOpen(false);
+                      if (link.path === '/') {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      }
+                    }}
                     className="no-underline block"
                   >
                     <motion.span
-                      whileHover={{ x: 10, color: '#A66B3F' }}
+                      whileHover={{ x: 10, color: '#FFFFFF' }}
                       transition={{ type: 'spring', stiffness: 300 }}
                       className="text-4xl font-bold text-white block transition-colors"
                       style={{ fontFamily: '"Space Mono", "JetBrains Mono", monospace' }}
@@ -217,24 +228,6 @@ const Navbar = () => {
                 </motion.div>
               ))}
 
-              {/* PCB Fabrication Button */}
-              <motion.div
-                variants={{
-                  hidden: { x: 50, opacity: 0 },
-                  visible: { x: 0, opacity: 1 }
-                }}
-                className="w-full max-w-xs mt-10"
-              >
-                <Link to="/pcb-fabrication" className="no-underline" onClick={() => setIsMobileMenuOpen(false)}>
-                  <motion.button
-                    whileHover={{ scale: 1.02, backgroundColor: 'rgba(166, 107, 63, 0.1)' }}
-                    whileTap={{ scale: 0.98 }}
-                    className="w-full px-8 py-4 rounded-sm bg-transparent border-2 border-[#A66B3F] text-white text-[16px] font-bold uppercase tracking-wider transition-all duration-300"
-                  >
-                    PCB Fabrication
-                  </motion.button>
-                </Link>
-              </motion.div>
             </motion.div>
           </motion.div>
         )}
