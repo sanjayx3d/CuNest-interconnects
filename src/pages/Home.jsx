@@ -25,17 +25,7 @@ const Home = () => {
   const location = useLocation();
 
   useEffect(() => {
-    if (location.hash) {
-      setTimeout(() => {
-        const id = location.hash.replace('#', '');
-        const element = document.getElementById(id);
-        if (element) {
-          // Adjust for navbar height + extra breathing room (approx 120px)
-          const y = element.getBoundingClientRect().top + window.scrollY - 120;
-          window.scrollTo({ top: y, behavior: 'smooth' });
-        }
-      }, 100);
-    }
+    // Hash scrolling is now handled centrally in App.jsx
   }, [location]);
 
   return (

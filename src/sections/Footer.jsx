@@ -48,47 +48,49 @@ const Footer = () => {
 
             {/* Column 1: Brand */}
             <Grid item xs={12} md={3}>
-              <Box sx={{ mb: 3 }}>
-                <div className="inline-block relative p-[2px] rounded-xl bg-gradient-to-r from-[#A66B3F] via-white/50 to-[#A66B3F] shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(166,107,63,0.5)] transition-all duration-300">
-                  <div className="bg-[#f8f9fa] rounded-[10px] px-5 py-2.5 flex items-center justify-center backdrop-blur-md gap-4">
-                    <img
-                      src="/logo1_transparent.png"
-                      alt="CuNest Logo Icon"
-                      style={{
-                        height: '52px',
-                        width: '52px',
-                        objectFit: 'contain'
-                      }}
-                    />
-                    <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                      <Typography sx={{
-                        fontFamily: '"JetBrains Mono", sans-serif',
-                        fontWeight: 800,
-                        fontSize: '1.5rem',
-                        lineHeight: 1,
-                        letterSpacing: '-0.02em',
-                        color: '#1E293B'
-                      }}>
-                        <span style={{ color: '#C5773A' }}>Cu</span>Nest
-                      </Typography>
-                      <Typography sx={{
-                        fontFamily: '"Inter", sans-serif',
-                        fontWeight: 600,
-                        fontSize: '0.75rem',
-                        letterSpacing: '0.02em',
-                        color: '#475569',
-                        lineHeight: 1,
-                        mt: 0.5
-                      }}>
-                        Interconnects
-                      </Typography>
-                    </Box>
+              <Box sx={{ transform: { md: 'translateY(-12px)' } }}>
+                <Box sx={{ mb: 3 }}>
+                  <div className="inline-block relative p-[2px] rounded-xl bg-gradient-to-r from-[#A66B3F] via-white/50 to-[#A66B3F] shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(166,107,63,0.5)] transition-all duration-300">
+                    <div className="bg-[#f8f9fa] rounded-[10px] px-5 py-2.5 flex items-center justify-center backdrop-blur-md gap-4">
+                      <img
+                        src="/logo1_transparent.png"
+                        alt="CuNest Logo Icon"
+                        style={{
+                          height: '52px',
+                          width: '52px',
+                          objectFit: 'contain'
+                        }}
+                      />
+                      <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                        <Typography sx={{
+                          fontFamily: '"JetBrains Mono", sans-serif',
+                          fontWeight: 800,
+                          fontSize: '1.5rem',
+                          lineHeight: 1,
+                          letterSpacing: '-0.02em',
+                          color: '#1E293B'
+                        }}>
+                          <span style={{ color: '#C5773A' }}>Cu</span>Nest
+                        </Typography>
+                        <Typography sx={{
+                          fontFamily: '"Inter", sans-serif',
+                          fontWeight: 600,
+                          fontSize: '0.75rem',
+                          letterSpacing: '0.02em',
+                          color: '#475569',
+                          lineHeight: 1,
+                          mt: 0.5
+                        }}>
+                          Interconnects
+                        </Typography>
+                      </Box>
+                    </div>
                   </div>
-                </div>
+                </Box>
+                <Typography variant="body2" sx={{ color: '#94a3b8', lineHeight: 1.8, fontFamily: 'sans-serif' }}>
+                  Precision Interconnects for the Next Generation of Computing. Sub-millimeter accuracy for mission-critical hardware.
+                </Typography>
               </Box>
-              <Typography variant="body2" sx={{ color: '#94a3b8', lineHeight: 1.8, fontFamily: 'sans-serif' }}>
-                Precision Interconnects for the Next Generation of Computing. Sub-millimeter accuracy for mission-critical hardware.
-              </Typography>
             </Grid>
 
             {/* Column 2: Links */}

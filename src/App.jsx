@@ -28,14 +28,27 @@ function App() {
   const location = useLocation();
 
   useEffect(() => {
-    if (!location.hash) {
-      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    // If there is a hash, scroll to it with offset for navbar
+    // Otherwise, scrolling to top is handled by AnimatePresence onExitComplete
+    if (location.hash) {
+      // Small delay to allow page transition to complete
+      setTimeout(() => {
+        const element = document.querySelector(location.hash);
+        if (element) {
+          const y = element.getBoundingClientRect().top + window.scrollY - 120;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      }, 500);
     }
   }, [location.pathname, location.hash]);
 
   return (
     <Layout>
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="wait" onExitComplete={() => {
+        if (!location.hash) {
+          window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+        }
+      }}>
         <Suspense fallback={<FallbackLoader />}>
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Home />} />

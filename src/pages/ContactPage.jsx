@@ -1,12 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Box, Container, Grid, Typography, TextField, Button, Paper } from '@mui/material';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import PhoneIcon from '@mui/icons-material/Phone';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const ContactPage = () => {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsSubmitted(true);
+  };
+
   // Input fields styling
   const textFieldStyles = {
+    '& .MuiInputBase-input': {
+      color: '#000',
+    },
+    '& .MuiInputBase-input::placeholder': {
+      color: '#666',
+      opacity: 1,
+    },
     '& .MuiOutlinedInput-root': {
       '& fieldset': { borderColor: 'rgba(0, 0, 0, 0.1)' },
       '&:hover fieldset': { borderColor: '#CD7F32' },
@@ -70,41 +84,118 @@ const ContactPage = () => {
             </Grid>
 
             {/* Right Side - Contact Form */}
-            <Grid item xs={12} md={7} sx={{ backgroundColor: '#FFFFFF', p: { xs: 4, md: 8 } }}>
-              <Box component="form" sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-                <Box>
-                  <Typography variant="subtitle2" sx={{ fontWeight: 600, color: '#333', mb: 1 }}>Full Name</Typography>
-                  <TextField fullWidth placeholder="John Doe" variant="outlined" sx={textFieldStyles} />
-                </Box>
-                <Box>
-                  <Typography variant="subtitle2" sx={{ fontWeight: 600, color: '#333', mb: 1 }}>Email address</Typography>
-                  <TextField fullWidth placeholder="name@example.com" type="email" variant="outlined" sx={textFieldStyles} />
-                </Box>
-                <Box>
-                  <Typography variant="subtitle2" sx={{ fontWeight: 600, color: '#333', mb: 1 }}>Subject</Typography>
-                  <TextField fullWidth placeholder="Subject" variant="outlined" sx={textFieldStyles} />
-                </Box>
-                <Box>
-                  <Typography variant="subtitle2" sx={{ fontWeight: 600, color: '#333', mb: 1 }}>Message</Typography>
-                  <TextField fullWidth placeholder="Message" multiline rows={4} variant="outlined" sx={textFieldStyles} />
-                </Box>
-                <Button 
-                  variant="contained" 
-                  size="large" 
-                  sx={{ 
-                    backgroundColor: '#CD7F32', 
-                    color: '#fff', 
-                    py: 1.5, 
-                    fontWeight: 'bold',
-                    fontSize: '1rem',
-                    textTransform: 'none',
-                    borderRadius: '8px',
-                    '&:hover': { backgroundColor: '#a46528' }
-                  }}
-                >
-                  Send Message
-                </Button>
-              </Box>
+            <Grid item xs={12} md={7} sx={{ backgroundColor: '#FFFFFF', p: { xs: 4, md: 8 }, display: 'flex', flexDirection: 'column', justifyContent: 'center', minHeight: '500px' }}>
+              <AnimatePresence mode="wait">
+                {!isSubmitted ? (
+                  <motion.div
+                    key="form"
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    transition={{ duration: 0.3 }}
+                    style={{ width: '100%' }}
+                  >
+                    <Box component="form" onSubmit={handleSubmit} sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+                      <Box>
+                        <Typography variant="subtitle2" sx={{ fontWeight: 600, color: '#333', mb: 1 }}>Full Name</Typography>
+                        <TextField required fullWidth placeholder="John Doe" variant="outlined" sx={textFieldStyles} />
+                      </Box>
+                      <Box>
+                        <Typography variant="subtitle2" sx={{ fontWeight: 600, color: '#333', mb: 1 }}>Email address</Typography>
+                        <TextField required fullWidth placeholder="name@example.com" type="email" variant="outlined" sx={textFieldStyles} />
+                      </Box>
+                      <Box>
+                        <Typography variant="subtitle2" sx={{ fontWeight: 600, color: '#333', mb: 1 }}>Subject</Typography>
+                        <TextField required fullWidth placeholder="Subject" variant="outlined" sx={textFieldStyles} />
+                      </Box>
+                      <Box>
+                        <Typography variant="subtitle2" sx={{ fontWeight: 600, color: '#333', mb: 1 }}>Message</Typography>
+                        <TextField required fullWidth placeholder="Message" multiline rows={4} variant="outlined" sx={textFieldStyles} />
+                      </Box>
+                      <Button 
+                        type="submit"
+                        variant="contained" 
+                        size="large" 
+                        sx={{ 
+                          backgroundColor: '#CD7F32', 
+                          color: '#fff', 
+                          py: 1.5, 
+                          fontWeight: 'bold',
+                          fontSize: '1rem',
+                          textTransform: 'none',
+                          borderRadius: '8px',
+                          '&:hover': { backgroundColor: '#a46528' }
+                        }}
+                      >
+                        Send Message
+                      </Button>
+                    </Box>
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="success"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.9 }}
+                    transition={{ duration: 0.5, type: 'spring' }}
+                    style={{ textAlign: 'center', width: '100%' }}
+                  >
+                    <Box sx={{ display: 'flex', justifyContent: 'center', mb: 4 }}>
+                      <motion.svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 50 50"
+                        width="100"
+                        height="100"
+                      >
+                        <motion.circle
+                          cx="25"
+                          cy="25"
+                          r="22"
+                          fill="none"
+                          stroke="#4caf50"
+                          strokeWidth="3"
+                          initial={{ pathLength: 0 }}
+                          animate={{ pathLength: 1 }}
+                          transition={{ duration: 0.6, ease: "easeOut" }}
+                        />
+                        <motion.path
+                          d="M15 25 l7 7 l13 -13"
+                          fill="none"
+                          stroke="#4caf50"
+                          strokeWidth="4"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          initial={{ pathLength: 0 }}
+                          animate={{ pathLength: 1 }}
+                          transition={{ duration: 0.5, delay: 0.6, ease: "easeOut" }}
+                        />
+                      </motion.svg>
+                    </Box>
+                    <Typography variant="h4" sx={{ fontFamily: '"JetBrains Mono", sans-serif', fontWeight: 800, color: '#0F3D3E', mb: 2 }}>
+                      Thank You!
+                    </Typography>
+                    <Typography variant="body1" sx={{ color: '#666666', mb: 4, maxWidth: '400px', mx: 'auto' }}>
+                      Your message has been successfully sent. Our team will get back to you shortly.
+                    </Typography>
+                    <Button 
+                      onClick={() => setIsSubmitted(false)}
+                      variant="outlined" 
+                      sx={{ 
+                        color: '#CD7F32', 
+                        borderColor: '#CD7F32',
+                        py: 1, 
+                        px: 4,
+                        fontWeight: 'bold',
+                        textTransform: 'none',
+                        borderRadius: '8px',
+                        '&:hover': { backgroundColor: 'rgba(205, 127, 50, 0.1)', borderColor: '#CD7F32' }
+                      }}
+                    >
+                      Send Another Message
+                    </Button>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </Grid>
           </Grid>
         </Paper>
