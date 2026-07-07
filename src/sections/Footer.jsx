@@ -1,34 +1,35 @@
 import React from 'react';
 import { Box, Container, Grid, Typography, Link as MuiLink } from '@mui/material';
 import { Link } from 'react-router-dom';
+import MaintenanceBanner from '../components/MaintenanceBanner';
 
 const Footer = () => {
   return (
     <Box component="footer" className="bg-gradient-to-b from-[#0F3D3E] to-[#0A192F]" sx={{ pt: 12, pb: 6 }}>
-      
+
       {/* Contact Form Section */}
       <Container maxWidth="md" sx={{ textAlign: 'center', mb: 12 }}>
         <Typography variant="h3" sx={{ color: '#fff', fontWeight: 800, mb: 6, fontFamily: '"JetBrains Mono", sans-serif', fontSize: { xs: '2rem', md: '3rem' } }}>
           Ready to engineer your next interconnect?
         </Typography>
         <Box component="form" sx={{ display: 'flex', flexDirection: 'column', gap: 3, maxWidth: '500px', mx: 'auto' }}>
-          <input 
-            type="text" 
-            placeholder="Name" 
-            className="w-full bg-[#112240] border border-white/10 rounded-lg px-4 py-3 text-white outline-none focus:border-[#A66B3F] transition-colors placeholder-white/40" 
+          <input
+            type="text"
+            placeholder="Name"
+            className="w-full bg-[#112240] border border-white/10 rounded-lg px-4 py-3 text-white outline-none focus:border-[#A66B3F] transition-colors placeholder-white/40"
           />
-          <input 
-            type="email" 
-            placeholder="Email" 
-            className="w-full bg-[#112240] border border-white/10 rounded-lg px-4 py-3 text-white outline-none focus:border-[#A66B3F] transition-colors placeholder-white/40" 
+          <input
+            type="email"
+            placeholder="Email"
+            className="w-full bg-[#112240] border border-white/10 rounded-lg px-4 py-3 text-white outline-none focus:border-[#A66B3F] transition-colors placeholder-white/40"
           />
-          <textarea 
-            placeholder="Message" 
-            rows="4" 
+          <textarea
+            placeholder="Message"
+            rows="4"
             className="w-full bg-[#112240] border border-white/10 rounded-lg px-4 py-3 text-white outline-none focus:border-[#A66B3F] transition-colors placeholder-white/40 resize-none"
           ></textarea>
-          <button 
-            type="button" 
+          <button
+            type="button"
             className="mt-2 w-full px-6 py-3.5 rounded-sm bg-transparent border-2 border-[#A66B3F] text-white font-bold uppercase tracking-wider hover:bg-[#A66B3F]/10 hover:scale-[1.02] transition-all duration-300"
           >
             Send Message
@@ -36,24 +37,54 @@ const Footer = () => {
         </Box>
       </Container>
 
+      <div className="mb-12">
+        <MaintenanceBanner />
+      </div>
+
       {/* Footer Grid */}
       <Box sx={{ borderTop: '1px solid rgba(255,255,255,0.05)', pt: 10 }}>
         <Container maxWidth="lg">
           <Grid container spacing={{ xs: 8, md: 4 }}>
-            
+
             {/* Column 1: Brand */}
             <Grid item xs={12} md={3}>
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 3 }}>
-                <svg width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="12" y="12" width="40" height="40" rx="4" stroke="#A66B3F" strokeWidth="2" />
-                  <path d="M12 24H8 M12 32H8 M12 40H8 M52 24H56 M52 32H56 M52 40H56 M24 12V8 M32 12V8 M40 12V8 M24 52V56 M32 52V56 M40 52V56" stroke="#FBF8F1" strokeWidth="2" strokeLinecap="round" />
-                  <circle cx="32" cy="28" r="6" stroke="#A66B3F" strokeWidth="1.5" />
-                  <circle cx="28" cy="36" r="6" stroke="#FBF8F1" strokeWidth="1.5" />
-                  <circle cx="36" cy="36" r="6" stroke="#A66B3F" strokeWidth="1.5" />
-                </svg>
-                <Typography sx={{ fontFamily: 'sans-serif', fontWeight: 800, color: '#FFFFFF', fontSize: '1.25rem' }}>
-                  CuNest
-                </Typography>
+              <Box sx={{ mb: 3 }}>
+                <div className="inline-block relative p-[2px] rounded-xl bg-gradient-to-r from-[#A66B3F] via-white/50 to-[#A66B3F] shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(166,107,63,0.5)] transition-all duration-300">
+                  <div className="bg-[#f8f9fa] rounded-[10px] px-5 py-2.5 flex items-center justify-center backdrop-blur-md gap-4">
+                    <img
+                      src="/logo1_transparent.png"
+                      alt="CuNest Logo Icon"
+                      style={{
+                        height: '52px',
+                        width: '52px',
+                        objectFit: 'contain'
+                      }}
+                    />
+                    <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                      <Typography sx={{
+                        fontFamily: '"JetBrains Mono", sans-serif',
+                        fontWeight: 800,
+                        fontSize: '1.5rem',
+                        lineHeight: 1,
+                        letterSpacing: '-0.02em',
+                        color: '#1E293B'
+                      }}>
+                        <span style={{ color: '#C5773A' }}>Cu</span>Nest
+                      </Typography>
+                      <Typography sx={{
+                        fontFamily: '"Inter", sans-serif',
+                        fontWeight: 600,
+                        fontSize: '0.75rem',
+                        letterSpacing: '0.02em',
+                        color: '#475569',
+                        lineHeight: 1,
+                        mt: 0.5
+                      }}>
+                        Interconnects
+                      </Typography>
+                    </Box>
+                  </div>
+                </div>
               </Box>
               <Typography variant="body2" sx={{ color: '#94a3b8', lineHeight: 1.8, fontFamily: 'sans-serif' }}>
                 Precision Interconnects for the Next Generation of Computing. Sub-millimeter accuracy for mission-critical hardware.
@@ -95,9 +126,9 @@ const Footer = () => {
                 Subscribe to our newsletter for the latest in interconnect technology.
               </Typography>
               <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-                <input 
-                  type="email" 
-                  placeholder="Enter your email" 
+                <input
+                  type="email"
+                  placeholder="Enter your email"
                   className="bg-[#112240] border border-white/10 rounded-full px-4 py-2 text-white outline-none focus:border-[#A66B3F] w-full text-sm transition-colors placeholder-white/40"
                 />
                 <button className="w-full px-6 py-2 rounded-sm bg-transparent border-2 border-[#A66B3F] text-white font-bold uppercase tracking-wider hover:bg-[#A66B3F]/10 hover:scale-[1.02] transition-all duration-300">
@@ -107,7 +138,7 @@ const Footer = () => {
             </Grid>
 
           </Grid>
-          
+
           {/* Bottom Copyright Row */}
           <Box sx={{ mt: 10, pt: 4, borderTop: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: { xs: 'column', md: 'row' }, justifyContent: 'space-between', alignItems: { xs: 'center', md: 'flex-start' }, gap: 2 }}>
             <Typography variant="body2" sx={{ color: '#64748b', fontFamily: 'sans-serif', textAlign: { xs: 'center', md: 'left' } }}>

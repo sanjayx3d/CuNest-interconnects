@@ -8,43 +8,43 @@ const cardsData = [
   {
     title: 'Signal Integrity',
     items: [
-      'Pre layout & Post layout Analysis',
-      'Co-design (IC/package/board)',
-      'Serial (Serdes) & parallel (DDR) Channel Sim.',
-      'IBIS/IBIS-AMI Modelling',
-      'Crosstalk Analysis',
-      'Channel Characterization',
-      'Timing analysis',
-      'Eye Diagram analysis'
+      '❖ Pre layout & Post layout Analysis',
+      '❖ Co-design (IC/package/board)',
+      '❖ Serial (Serdes) & parallel (DDR) Channel Sim.',
+      '❖ IBIS/IBIS-AMI Modelling',
+      '❖ Crosstalk Analysis',
+      '❖ Channel Characterization',
+      '❖ Timing analysis',
+      '❖ Eye Diagram analysis'
     ]
   },
   {
     title: 'Power Integrity',
     items: [
-      'DC Drop Analysis',
-      'AC Analysis',
-      'PDN impedance optimization',
-      'Transient noise estimation',
-      'Decoupling cap analysis & optimization',
-      'Co-Simulation (Package + Board)',
-      'Crosstalk',
-      'RFI Simulation',
-      'Compliances to various EMI standards during the design phase'
+      '❖ DC Drop Analysis',
+      '❖ AC Analysis',
+      '❖ PDN impedance optimization',
+      '❖ Transient noise estimation',
+      '❖ Decoupling cap analysis & optimization',
+      '❖ Co-Simulation (Package + Board)',
+      '❖ Crosstalk',
+      '❖ RFI Simulation',
+      '❖ Compliances to various EMI standards during the design phase'
     ]
   },
   {
     title: 'Simulation Tool Expertise',
     items: [
-      'Cadence Sigrity:',
-      'Clarity 3D',
-      'Power SI',
-      'Power DC',
-      'Optimize PI',
-      'System SI',
-      'Ansys:',
-      'HFSS',
-      'SI Wave',
-      'Circuit Design'
+      '❖ Cadence Sigrity:',
+      '❖ Clarity 3D',
+      '❖ Power SI',
+      '❖ Power DC',
+      '❖ Optimize PI',
+      '❖ System SI',
+      '❖ Ansys:',
+      '❖ HFSS',
+      '❖ SI Wave',
+      '❖ Circuit Design'
     ]
   }
 ];
@@ -71,7 +71,7 @@ function SiPiAnalysisPage() {
         <div className="text-center mb-16">
           <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <h1 className="text-4xl md:text-5xl font-bold uppercase tracking-tight text-[#8C5A2B] mb-4 font-sans">
-              SI & PI ANALYSIS / IC PACKAGING
+              SI & PI ANALYSIS
             </h1>
             
             <h2 className="text-xl md:text-2xl font-semibold text-[#0F3D3E] mb-6 font-sans">

@@ -23,7 +23,7 @@ const featuresData = [
   },
   {
     title: 'IC PACKAGING DESIGN',
-    path: '/sipi-analysis',
+    path: '/ic-packaging',
     description: 'Our team designs cutting-edge IC packaging solutions that offer maximum protection, heat dissipation, and reliability for your integrated circuits.',
     icon: (
       <motion.div
@@ -109,37 +109,64 @@ const renderBackgroundSVG = (index) => {
     case 1:
       return (
         <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <rect x="25" y="25" width="50" height="50" rx="3" stroke="#A66B3F" strokeWidth="1" fill="transparent" opacity="0.6" />
-          <motion.rect
-            x="40" y="40" width="20" height="20" fill="rgba(166,107,63,0.2)" stroke="#A66B3F" strokeWidth="0.5"
-            animate={{ opacity: [0.3, 0.8, 0.3] }}
-            transition={{ repeat: Infinity, duration: 15, ease: "easeInOut" }}
+          {/* Base substrate */}
+          <motion.polygon
+            points="50,75 85,60 50,45 15,60"
+            fill="transparent"
+            stroke="#A66B3F"
+            strokeWidth="0.5"
+            animate={{ opacity: [0.2, 0.6, 0.2], y: [0, 2, 0] }}
+            transition={{ repeat: Infinity, duration: 8, ease: "easeInOut" }}
           />
+          {/* Interposer layer */}
+          <motion.polygon
+            points="50,65 75,55 50,45 25,55"
+            fill="rgba(166,107,63,0.1)"
+            stroke="#A66B3F"
+            strokeWidth="0.5"
+            animate={{ opacity: [0.3, 0.8, 0.3], y: [0, -2, 0] }}
+            transition={{ repeat: Infinity, duration: 8, delay: 1, ease: "easeInOut" }}
+          />
+          {/* Top Die */}
+          <motion.polygon
+            points="50,55 65,48 50,41 35,48"
+            fill="rgba(166,107,63,0.3)"
+            stroke="#A66B3F"
+            strokeWidth="1"
+            animate={{ opacity: [0.5, 1, 0.5], y: [0, -4, 0] }}
+            transition={{ repeat: Infinity, duration: 8, delay: 2, ease: "easeInOut" }}
+          />
+          {/* Connecting lines / wirebonds */}
           {[
-            { d: "M 40 45 Q 30 40 25 45", cx: 25, cy: 45 }, { d: "M 40 55 Q 30 60 25 55", cx: 25, cy: 55 },
-            { d: "M 60 45 Q 70 40 75 45", cx: 75, cy: 45 }, { d: "M 60 55 Q 70 60 75 55", cx: 75, cy: 55 },
-            { d: "M 45 40 Q 40 30 45 25", cx: 45, cy: 25 }, { d: "M 55 40 Q 60 30 55 25", cx: 55, cy: 25 },
-            { d: "M 45 60 Q 40 70 45 75", cx: 45, cy: 75 }, { d: "M 55 60 Q 60 70 55 75", cx: 55, cy: 75 }
-          ].map((wire, i) => (
-            <React.Fragment key={i}>
-              <motion.path
-                d={wire.d} fill="transparent" stroke="#A66B3F" strokeWidth="0.8"
-                initial={{ pathLength: 0, opacity: 0.2 }}
-                animate={{ pathLength: [0, 1, 1], opacity: [0.2, 1, 0.2] }}
-                transition={{ repeat: Infinity, duration: 12.5, delay: i * 0.75, ease: "easeInOut" }}
-              />
-              <circle cx={wire.cx} cy={wire.cy} r="1" fill="#A66B3F" opacity="0.6" />
-            </React.Fragment>
+            { d: "M 35 48 L 25 55", delay: 0 },
+            { d: "M 65 48 L 75 55", delay: 1 },
+            { d: "M 50 41 L 50 30", delay: 2 },
+            { d: "M 50 55 L 50 65", delay: 1.5 }
+          ].map((line, i) => (
+            <motion.path
+              key={`line-${i}`}
+              d={line.d}
+              fill="transparent"
+              stroke="#A66B3F"
+              strokeWidth="0.5"
+              strokeDasharray="2,2"
+              animate={{ opacity: [0, 1, 0], pathLength: [0, 1, 0] }}
+              transition={{ repeat: Infinity, duration: 6, delay: line.delay, ease: "linear" }}
+            />
           ))}
-          {Array.from({ length: 5 }).map((_, row) =>
-            Array.from({ length: 5 }).map((_, col) => (
-              <motion.circle
-                key={`bga-${row}-${col}`} cx={30 + col * 10} cy={30 + row * 10} r="0.8" fill="#A66B3F"
-                animate={{ opacity: [0.1, 0.5, 0.1] }}
-                transition={{ repeat: Infinity, duration: 10, delay: (row + col) * 1, ease: "easeInOut" }}
-              />
-            ))
-          )}
+          {/* Glowing nodes */}
+          <motion.circle
+            cx="50" cy="30" r="1.5"
+            fill="#A66B3F"
+            animate={{ scale: [1, 2, 1], opacity: [0.5, 1, 0.5] }}
+            transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+          />
+          <motion.circle
+            cx="50" cy="65" r="1.5"
+            fill="#A66B3F"
+            animate={{ scale: [1, 1.5, 1], opacity: [0.3, 0.8, 0.3] }}
+            transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+          />
         </svg>
       );
     case 2:

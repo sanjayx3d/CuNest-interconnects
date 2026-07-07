@@ -54,7 +54,7 @@ function WhatWeOfferSection() {
           {services.map((service, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
               <Paper
-                onClick={() => index === 0 ? navigate('/pcb-design') : index === 2 ? navigate('/sipi-analysis') : null}
+                onClick={() => index === 0 ? navigate('/pcb-design') : index === 1 ? navigate('/ic-packaging') : index === 2 ? navigate('/sipi-analysis') : null}
                 elevation={0}
                 sx={{
                   position: 'relative',
@@ -68,7 +68,7 @@ function WhatWeOfferSection() {
                   background: 'linear-gradient(145deg, #0A192F 0%, #02060D 100%)', // Deep navy-to-black gradient
                   border: '1px solid rgba(0, 229, 255, 0.1)', // Subtle cyan border
                   transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                  cursor: (index === 0 || index === 2) ? 'pointer' : 'default',
+                  cursor: (index === 0 || index === 1 || index === 2) ? 'pointer' : 'default',
                   '&:hover': {
                     transform: 'translateY(-8px)',
                     boxShadow: '0 20px 40px rgba(0, 229, 255, 0.15)', // Electric Cyan glow

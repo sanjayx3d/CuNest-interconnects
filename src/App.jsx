@@ -10,6 +10,7 @@ import { setScrollY } from './store/uiSlice';
 const Home = lazy(() => import('./pages/Home'));
 const PcbDesignPage = lazy(() => import('./components/PcbDesignPage'));
 const SiPiAnalysisPage = lazy(() => import('./components/SiPiAnalysisPage'));
+const IcPackagingPage = lazy(() => import('./components/IcPackagingPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
 const AboutPage = lazy(() => import('./pages/AboutPage'));
 // Creating dummy components for routes requested in Navbar, they can be expanded later
@@ -45,6 +46,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/pcb-design" element={<PcbDesignPage />} />
             <Route path="/sipi-analysis" element={<SiPiAnalysisPage />} />
+            <Route path="/ic-packaging" element={<IcPackagingPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/pcb-fabrication" element={<PcbFabrication />} />

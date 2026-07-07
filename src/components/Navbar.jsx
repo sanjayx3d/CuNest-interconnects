@@ -25,38 +25,54 @@ const Navbar = () => {
   const activeLink = navLinks.find(l => l.path === location.pathname)?.title || 'Home';
 
   const Logo = () => (
-    <Link to="/" className="flex items-center gap-3 no-underline">
-      <img src="/logo1_transparent.png" alt="CuNest Logo" style={{ width: '48px', height: '48px', objectFit: 'contain', filter: 'drop-shadow(0px 2px 4px rgba(255,255,255,0.2))' }} />
-      <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-        <Typography sx={{ 
-          fontFamily: '"JetBrains Mono", sans-serif', 
-          fontWeight: 800, 
-          fontSize: '1.2rem', 
-          lineHeight: 1,
-          textShadow: 'none'
-        }}>
-          <span style={{ color: '#CD7F32' }}>Cu</span><span style={{ color: '#FFFFFF' }}>Nest</span>
-        </Typography>
-        <Typography sx={{ 
-          fontFamily: '"JetBrains Mono", sans-serif', 
-          fontWeight: 600, 
-          fontSize: '0.65rem', 
-          letterSpacing: '0.15em',
-          color: '#FFFFFF',
-          lineHeight: 1,
-          mt: 0.5,
-          textShadow: 'none'
-        }}>
-          INTERCONNECTS
-        </Typography>
-      </Box>
+    <Link to="/" className="flex items-center no-underline">
+      <motion.div
+        whileHover={{ scale: 1.02, filter: 'drop-shadow(0px 0px 20px rgba(166,107,63,0.5))' }}
+        whileTap={{ scale: 0.98 }}
+        className="relative p-[2px] rounded-xl bg-gradient-to-r from-[#A66B3F] via-white/50 to-[#A66B3F] shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
+      >
+        <div className="bg-[#f8f9fa] rounded-[10px] px-5 py-2.5 flex items-center justify-center backdrop-blur-md gap-4">
+          <img
+            src="/logo1_transparent.png"
+            alt="CuNest Logo Icon"
+            style={{
+              height: '50px',
+              width: '50px',
+              objectFit: 'contain'
+            }}
+          />
+          <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+            <Typography sx={{
+              fontFamily: '"JetBrains Mono", sans-serif',
+              fontWeight: 800,
+              fontSize: '1.5rem',
+              lineHeight: 1,
+              letterSpacing: '-0.02em',
+              color: '#1E293B'
+            }}>
+              <span style={{ color: '#C5773A' }}>Cu</span>Nest
+            </Typography>
+            <Typography sx={{
+              fontFamily: '"Inter", sans-serif',
+              fontWeight: 600,
+              fontSize: '0.75rem',
+              letterSpacing: '0.02em',
+              color: '#475569',
+              lineHeight: 1,
+              mt: 0.5
+            }}>
+              Interconnects
+            </Typography>
+          </Box>
+        </div>
+      </motion.div>
     </Link>
   );
 
   return (
     <>
-      <AppBar 
-        position="fixed" 
+      <AppBar
+        position="fixed"
         elevation={0}
         sx={{
           backgroundColor: 'rgba(27, 74, 56, 0.9)',
@@ -66,7 +82,7 @@ const Navbar = () => {
       >
         {/* Subtle circuit-grid pattern background */}
         <div className="absolute inset-0 pointer-events-none opacity-[0.03]" style={{ backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.5) 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
-        
+
         <div className="w-full max-w-7xl mx-auto px-6 py-4 flex justify-between items-center relative z-10">
           <div className="flex items-center">
             <Logo />
@@ -79,14 +95,14 @@ const Navbar = () => {
             {/* Desktop Navigation */}
             <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 2 }}>
               {navLinks.map((link) => (
-                <div 
+                <div
                   key={link.title}
                   className="relative px-5 py-2 cursor-pointer transition-colors duration-300"
                   onMouseEnter={() => setHoveredLink(link.title)}
                   onMouseLeave={() => setHoveredLink(null)}
                 >
                   <Link to={link.path} className="no-underline relative z-10 block">
-                    <motion.span 
+                    <motion.span
                       whileHover={{ x: 2, color: '#A66B3F' }}
                       transition={{ type: 'spring', stiffness: 300 }}
                       className={`font-medium block transition-colors ${activeLink === link.title ? 'text-white' : 'text-white/80'}`}
@@ -110,7 +126,7 @@ const Navbar = () => {
                   )}
                 </div>
               ))}
-              
+
               <Link to="/pcb-fabrication" className="no-underline ml-4">
                 <motion.button
                   whileHover={{ scale: 1.02, backgroundColor: 'rgba(166, 107, 63, 0.1)' }}
@@ -124,7 +140,7 @@ const Navbar = () => {
 
             {/* Mobile Menu Icon */}
             <motion.div className="md:hidden">
-              <motion.button 
+              <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 className="text-[#A66B3F] p-2"
@@ -163,7 +179,7 @@ const Navbar = () => {
             </div>
 
             {/* Staggered Links */}
-            <motion.div 
+            <motion.div
               initial="hidden"
               animate="visible"
               exit="hidden"
@@ -184,8 +200,8 @@ const Navbar = () => {
                   }}
                   transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                 >
-                  <Link 
-                    to={link.path} 
+                  <Link
+                    to={link.path}
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="no-underline block"
                   >
